@@ -1,5 +1,10 @@
 const resolvers = {
     Query: {
-        getStructure: () => '{}',
+        getStructure: () => ({
+            version: "1.0.0",
+            blocks: []
+
+        }),
     },
-  };
+};
+
