@@ -1,0 +1,30 @@
+{
+  "data": {
+    "getStructure": {
+      "version": "0.1",
+      "blocks": [
+        {
+          "type": "banners",
+          "id": "promo",
+          "caption": "Выгодные акции",
+          "order": 1,
+          "scrollType": "horizontalScroll"
+        },
+        {
+          "type": "shelf",
+          "id": "hits",
+          "caption": "Хиты продаж",
+          "order": 2,
+          "scrollType": "horizontalScroll"
+        },
+        {
+          "type": "shelf",
+          "id": "goodofday",
+          "caption": "Товары дня",
+          "order": 3,
+          "scrollType": "horizontalScroll"
+        }
+      ]
+    }
+  }
+}

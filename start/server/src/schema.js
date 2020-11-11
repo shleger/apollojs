@@ -1,6 +1,9 @@
 const { gql } = require('apollo-server');
 
 const typeDefs = gql`
+
+scalar JSON
+scalar JSONObject
   
 schema {
   query: Query
@@ -57,7 +60,7 @@ type ShelfBlockItem implements BlockItem {
 }
 type MainPageStructure {
   version: String
-  blocks: String
+  blocks: JSON
 }
 
   
