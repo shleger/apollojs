@@ -2,12 +2,9 @@ const { gql } = require('apollo-server');
 
 const typeDefs = gql`
 
-scalar JSON
-scalar JSONObject
-  
 schema {
   query: Query
-  
+#  mutation: Mutation
 }
 
 type Query {
@@ -16,7 +13,11 @@ type Query {
   getShelf (blockId: String): [ShelfBlockItem]
 }
 
+#type Mutation {
+#TODO insert mutation queries
+#}
 
+scalar JSON
 
 interface CoreBlock {
   type: String!
