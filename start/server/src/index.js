@@ -1,16 +1,16 @@
 // require('dotenv').config();
+const express = require('express');
+const { ApolloServer } = require('apollo-server-express');
 
-
-const { ApolloServer } = require('apollo-server');
 const typeDefs = require('./schema');
 // const resolvers = require('./resolvers'); //TODO WTF ????
 // const mocks = require('./mocks');
 
-let struct = require('./structure.json')
 
 
+let struct = require('./public/structure.json')
 const mocks = {
-  BlockItem: () => ({ 
+  BlockItem: () => ({
     type: "ssss",
     id: "uid",
     caption: "cap",
@@ -18,24 +18,31 @@ const mocks = {
     scrollType: "noScroll",
     __typename: "CoreBlock"
   }),
-  Int: () => Math.floor(Math.random()*10000000),
-  Float: () => Math.random()*10000000,
+  Int: () => Math.floor(Math.random() * 10000000),
+  Float: () => Math.random() * 10000000,
   String: () => Math.random().toString(36).substring(7),
 }
 
 const resolvers = {
   Query: {
-      getStructure: () => ({
-          version: "1.0.0",
-          blocks: struct
+    getStructure: () => ({
+      version: "1.0.0",
+      blocks: struct
 
-      }),
+    }),
   },
 }
+const server = new ApolloServer({ typeDefs, resolvers, mocks, mockEntireSchema: false });
+const app = express();
+app.use('/static', express.static(__dirname + '/public'));
+server.applyMiddleware({ app });
 
 
-const server = new ApolloServer({ typeDefs , resolvers, mocks,mockEntireSchema: false});
+app.get("/", (req, res) => {
+  res.status(301).redirect(`${server.graphqlPath}`)
+})
 
-server.listen().then(({ url }) => {
-  console.log(`🚀 Server ready at ${url}`);
-});
+app.listen({ port: 4000 }, () =>
+  console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
+);
+
