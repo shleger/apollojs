@@ -1,8 +1,4 @@
-{
-  "data": {
-    "getStructure": {
-      "version": "0.1",
-      "blocks": [
+      [
         {
           "type": "banners",
           "id": "promo",
@@ -25,6 +21,3 @@
           "scrollType": "horizontalScroll"
         }
       ]
-    }
-  }
-}
