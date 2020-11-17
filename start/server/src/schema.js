@@ -62,7 +62,7 @@ type ShelfBlockItem implements BlockItem {
 }
 type MainPageStructure {
   version: String
-  blocks: JSON
+  blocks: [Block]
 }
 
   
