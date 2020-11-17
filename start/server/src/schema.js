@@ -9,9 +9,9 @@ schema {
 }
 
 type Query {
-  getStructure : MainPageStructure
-  getBanners (blockId: String): [PromoBlockItem]
-  getShelf (blockId: String): [ShelfBlockItem]
+  structure : MainPageStructure
+  banners (blockId: String): [PromoBlockItem]
+  shelf (blockId: String): [ShelfBlockItem]
 }
 
 #type Mutation {

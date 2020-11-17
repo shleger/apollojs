@@ -3,7 +3,7 @@ let struct = require('./public/structure.json')
 
 const resolvers = {
     Query: {
-        getStructure: () => ({
+        structure: () => ({
             version: "1.0.0",
             blocks: struct
 
