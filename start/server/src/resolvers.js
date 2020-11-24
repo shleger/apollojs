@@ -9,28 +9,28 @@ const resolvers = {
 
         }),
         banners: () => ([{
-            caption:"12",
-            imageURL:"http://aaa1.as",
-            promoURL:"http://aaa1.as.dd",
-            promoUuid:"45"
+            caption: "12",
+            imageURL: "http://aaa1.as",
+            promoURL: "http://aaa1.as.dd",
+            promoUuid: "45"
         },
         {
-            caption:"12",
-            imageURL:"http://aaa2.as",
-            promoURL:"http://aaa2.as.dd",
-            promoUuid:"45"
+            caption: "12",
+            imageURL: "http://aaa2.as",
+            promoURL: "http://aaa2.as.dd",
+            promoUuid: "45"
         }]),
         shelf: () => ({
-            
-                "viewOptions": {
-                  "buttons": {
+
+            "viewOptions": {
+                "buttons": {
                     "card": true,
                     "favorites": false,
                     "compare": false
-                  }
-                },
-                "materials": [
-                  {
+                }
+            },
+            "materials": [
+                {
                     "id": 30046138,
                     "name": "Смартфон Xiaomi Redmi Note 8 Pro 6+128GB Mineral Grey",
                     "pictureURL": "https://img.mvideo.ru/Pdb/30046138.jpg",
@@ -43,14 +43,14 @@ const resolvers = {
                     "discountPercent": 15,
                     "articleType": null,
                     "status": {
-                      "type": {},
-                      "conditions": {
-                        "startDate": null,
-                        "endDate": null
-                      }
+                        "type": null,
+                        "conditions": {
+                            "startDate": null,
+                            "endDate": null
+                        }
                     }
-                  },
-                  {
+                },
+                {
                     "id": "20063291",
                     "name": "Пылесос ручной (handstick) Tefal Air Force 160 blue TY7231WO",
                     "pictureURL": "https://img.mvideo.ru/Pdb/20063291.jpg",
@@ -63,14 +63,14 @@ const resolvers = {
                     "discountPercent": null,
                     "articleType": false,
                     "status": {
-                      "type": {},
-                      "conditions": {
-                        "startDate": null,
-                        "endDate": null
-                      }
+                        "type": "Sale",
+                        "conditions": {
+                            "startDate": null,
+                            "endDate": null
+                        }
                     }
-                  },
-                  {
+                },
+                {
                     "id": 50049029,
                     "name": "Наушники накладные Bluetooth JBL T460BT Black (JBLT460BTBLK)",
                     "pictureURL": "https://img.mvideo.ru/Pdb/50049029.jpg",
@@ -83,14 +83,14 @@ const resolvers = {
                     "discountPercent": 20,
                     "articleType": false,
                     "status": {
-                      "type": {},
-                      "conditions": {
-                        "startDate": null,
-                        "endDate": null
-                      }
+                        "type": "Sale",
+                        "conditions": {
+                            "startDate": null,
+                            "endDate": null
+                        }
                     }
-                  },
-                  {
+                },
+                {
                     "id": 20068767,
                     "name": "Кофемашина капсульного типа Dolce Gusto Krups Piccolo XS KP1A3B10",
                     "pictureURL": "https://img.mvideo.ru/Pdb/20068767.jpg",
@@ -103,14 +103,14 @@ const resolvers = {
                     "discountPercent": 10,
                     "articleType": false,
                     "status": {
-                      "type": {},
-                      "conditions": {
-                        "startDate": null,
-                        "endDate": null
-                      }
+                        "type": "Sale",
+                        "conditions": {
+                            "startDate": null,
+                            "endDate": null
+                        }
                     }
-                  },
-                  {
+                },
+                {
                     "id": 20067280,
                     "name": "Электрогриль Redmond SteakMaster RGM-M816P SteakMaster RGM-M816P",
                     "pictureURL": "https://img.mvideo.ru/Pdb/20067280.jpg",
@@ -123,14 +123,14 @@ const resolvers = {
                     "discountPercent": null,
                     "articleType": false,
                     "status": {
-                      "type": {},
-                      "conditions": {
-                        "startDate": null,
-                        "endDate": null
-                      }
+                        "type": "Sale",
+                        "conditions": {
+                            "startDate": null,
+                            "endDate": null
+                        }
                     }
-                  },
-                  {
+                },
+                {
                     "id": 30052942,
                     "name": "Смартфон Apple iPhone 11 128GB Black (MHDH3RU/A)",
                     "pictureURL": "https://img.mvideo.ru/Pdb/30052942.jpg",
@@ -143,17 +143,15 @@ const resolvers = {
                     "discountPercent": null,
                     "articleType": false,
                     "status": {
-                      "type": {
-
-                      },
-                      "conditions": {
-                        "startDate": null,
-                        "endDate": null
-                      }
+                        "type": "Sale",
+                        "conditions": {
+                            "startDate": null,
+                            "endDate": null
+                        }
                     }
-                  }
-                ]
-          
+                }
+            ]
+
         })
     },
 };
