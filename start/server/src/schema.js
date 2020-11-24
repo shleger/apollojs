@@ -1,5 +1,15 @@
 const { gql } = require('apollo-server-express');
 
+// const { GraphQLDate, GraphQLTime, GraphQLDateTime } = require('@types/graphql-iso-date') ;
+
+// const customScalarResolver = {
+//   Date: GraphQLDateTime
+// };
+
+// export default [
+//   customScalarResolver,
+// ];
+
 
 const typeDefs = gql`
 

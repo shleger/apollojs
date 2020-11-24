@@ -41,12 +41,12 @@ const resolvers = {
                     "card": false,
                     "favorites": false,
                     "discountPercent": 15,
-                    "articleType": null,
+                    "articleType": "ZDGC",
                     "status": {
-                        "type": null,
+                        "type": "Preorder",
                         "conditions": {
-                            "startDate": null,
-                            "endDate": null
+                            "startDate": "2020-11-25",
+                            "endDate": "2020-12-31"
                         }
                     }
                 },
