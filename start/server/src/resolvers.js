@@ -61,7 +61,7 @@ const resolvers = {
                     "card": false,
                     "favorites": false,
                     "discountPercent": null,
-                    "articleType": false,
+                    "articleType": null,
                     "status": {
                         "type": "Sale",
                         "conditions": {
@@ -81,7 +81,7 @@ const resolvers = {
                     "card": false,
                     "favorites": false,
                     "discountPercent": 20,
-                    "articleType": false,
+                    "articleType": null,
                     "status": {
                         "type": "Sale",
                         "conditions": {
@@ -101,7 +101,7 @@ const resolvers = {
                     "card": false,
                     "favorites": false,
                     "discountPercent": 10,
-                    "articleType": false,
+                    "articleType": null,
                     "status": {
                         "type": "Sale",
                         "conditions": {
@@ -121,7 +121,7 @@ const resolvers = {
                     "card": false,
                     "favorites": false,
                     "discountPercent": null,
-                    "articleType": false,
+                    "articleType": null,
                     "status": {
                         "type": "Sale",
                         "conditions": {
@@ -141,7 +141,7 @@ const resolvers = {
                     "card": false,
                     "favorites": false,
                     "discountPercent": null,
-                    "articleType": false,
+                    "articleType": null,
                     "status": {
                         "type": "Sale",
                         "conditions": {
