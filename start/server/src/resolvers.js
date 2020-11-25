@@ -1,25 +1,59 @@
 let struct = require('./public/structure.json')
 
+// const { GraphQLDate, GraphQLTime, GraphQLDateTime } = require('graphql-iso-date') ;
+
+// const customScalarResolver = {
+//   Date: GraphQLDateTime
+// };
+
 
 const resolvers = {
+    // Date: GraphQLDate,
     Query: {
         structure: () => ({
             version: "1.0.0",
             blocks: struct
 
         }),
-        banners: () => ([{
-            caption: "12",
-            imageURL: "http://aaa1.as",
-            promoURL: "http://aaa1.as.dd",
-            promoUuid: "45"
-        },
-        {
-            caption: "12",
-            imageURL: "http://aaa2.as",
-            promoURL: "http://aaa2.as.dd",
-            promoUuid: "45"
-        }]),
+        banners: () => ([
+                {
+                  "caption": "Чёрная пятница!",
+                  "imageURL": "https://static.mvideo.ru/icerock/mobile_media/2020/November/cherna-pyatnica.png",
+                  "promoURL": "promoURL1",
+                  "promoUuid": "f913f8c6-4562-47c5-8fd0-f768789ed2d3"
+                },
+                {
+                  "caption": "Акция «Эко trade-in»: меняем старую технику на скидки",
+                  "imageURL": "https://static.mvideo.ru/icerock/mobile_media/2020/October/treid1440x932.png",
+                  "promoURL": "promoURL2",
+                  "promoUuid": "3c0d4797-755a-4c72-8606-a0809c74fbe4"
+                },
+                {
+                  "caption": "Смарт-часы Apple Watch Series 6",
+                  "imageURL": "https://static.mvideo.ru/icerock/mobile_media/2020/September/frame_1.jpg",
+                  "promoURL": "promoURL3",
+                  "promoUuid": "12b3f450-c9b9-4c2c-ba0e-20c7a4465208"
+                },
+                {
+                  "caption": "Планшет Apple iPad",
+                  "imageURL": "https://static.mvideo.ru/icerock/mobile_media/2020/September/frame_9.jpg",
+                  "promoURL": "promoURL4",
+                  "promoUuid": "3e5fe517-b386-4717-a04d-7eec46c4de17"
+                },
+                {
+                  "caption": "Чёрная пятница!",
+                  "imageURL": "https://static.mvideo.ru/icerock/mobile_media/2020/November/cherna-pyatnica.png",
+                  "promoURL": "promoURL5",
+                  "promoUuid": "f913f8c6-4562-47c5-8fd0-f768789ed2d3"
+                },
+                {
+                  "caption": "Смарт-часы Apple Watch Series 6",
+                  "imageURL": "https://static.mvideo.ru/icerock/mobile_media/2020/September/frame_1.jpg",
+                  "promoURL": "promoURL3",
+                  "promoUuid": "12b3f450-c9b9-4c2c-ba0e-20c7a4465208"
+                }
+
+        ]),
         shelf: () => ({
 
             "viewOptions": {

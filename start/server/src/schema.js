@@ -1,15 +1,5 @@
 const { gql } = require('apollo-server-express');
 
-// const { GraphQLDate, GraphQLTime, GraphQLDateTime } = require('@types/graphql-iso-date') ;
-
-// const customScalarResolver = {
-//   Date: GraphQLDateTime
-// };
-
-// export default [
-//   customScalarResolver,
-// ];
-
 
 const typeDefs = gql`
 
@@ -62,7 +52,7 @@ type PromoBlockItem implements BlockItem {
   caption: String
   imageURL: String
   promoURL: String
-  promoUuid: Int
+  promoUuid: String
 }
 type ShelfBlockItem implements BlockItem {
   caption: String
