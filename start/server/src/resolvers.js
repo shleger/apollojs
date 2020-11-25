@@ -18,8 +18,8 @@ const resolvers = {
         banners: () => ({
             "viewOptions": {
                 "buttons": {
-                    "favorites": "false",
-                    "close": "false"
+                    "favorites": false,
+                    "close": false
                 }
             },
                 "items": [
