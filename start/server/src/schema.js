@@ -10,8 +10,8 @@ schema {
 
 type Query {
   structure : MainPageStructure
-  banners (blockId: String): [PromoBlockItem]
-  shelf (blockId: String): ShelfBlockItem
+  banners (blockId: String): PromoBlock
+  shelf (blockId: String): ShelfBlock
 }
 
 #type Mutation {
@@ -24,15 +24,16 @@ interface CoreBlock {
   caption: String
   order: Int
   scrollType: ScrollType
-  items: [BlockItem]
+  headers: [BlockHeader]
 }
+
 type Block implements CoreBlock {
   type: String!
   id: ID!
   caption: String
   order: Int
   scrollType: ScrollType
-  items: [BlockItem]
+  headers: [BlockHeader]
 }
 enum ScrollType {
   noScroll
@@ -41,20 +42,31 @@ enum ScrollType {
   horizontalPaging
   horizontalPagingEndless
 }
+
 enum BlockType {
   banners
   shelf
 }
-interface BlockItem {
+
+interface BlockHeader {
   caption: String
+  viewOptions: ViewOptions
 }
-type PromoBlockItem implements BlockItem {
+
+type PromoBlock implements BlockHeader {
+  caption: String
+  items:[PromoItem]
+  viewOptions: ViewOptions
+}
+
+type PromoItem {
   caption: String
   imageURL: String
   promoURL: String
   promoUuid: String
 }
-type ShelfBlockItem implements BlockItem {
+
+type ShelfBlock implements BlockHeader {
   caption: String
   materials: [Material]
   viewOptions: ViewOptions
