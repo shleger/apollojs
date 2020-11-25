@@ -27,37 +27,37 @@ const resolvers = {
                         "caption": "Чёрная пятница!",
                         "imageURL": "https://static.mvideo.ru/icerock/mobile_media/2020/November/cherna-pyatnica.png",
                         "promoURL": "promoURL1",
-                        "promoUuid": "f913f8c6-4562-47c5-8fd0-f768789ed2d3"
+                        "promoUuid": "acb33846-76f0-4666-ad47-03d1da9cacad"
                     },
                     {
                         "caption": "Акция «Эко trade-in»: меняем старую технику на скидки",
                         "imageURL": "https://static.mvideo.ru/icerock/mobile_media/2020/October/treid1440x932.png",
                         "promoURL": "promoURL2",
-                        "promoUuid": "3c0d4797-755a-4c72-8606-a0809c74fbe4"
+                        "promoUuid": "73655c22-1097-4a17-a272-fdbcb067d3b5"
                     },
                     {
                         "caption": "Смарт-часы Apple Watch Series 6",
                         "imageURL": "https://static.mvideo.ru/icerock/mobile_media/2020/September/frame_1.jpg",
                         "promoURL": "promoURL3",
-                        "promoUuid": "12b3f450-c9b9-4c2c-ba0e-20c7a4465208"
+                        "promoUuid": "ccb7af24-e0fc-4462-bf54-2647b00d2578"
                     },
                     {
                         "caption": "Планшет Apple iPad",
                         "imageURL": "https://static.mvideo.ru/icerock/mobile_media/2020/September/frame_9.jpg",
                         "promoURL": "promoURL4",
-                        "promoUuid": "3e5fe517-b386-4717-a04d-7eec46c4de17"
+                        "promoUuid": "01986d2c-2869-49ad-bb5a-e17798bd7c23"
                     },
                     {
                         "caption": "Чёрная пятница!",
                         "imageURL": "https://static.mvideo.ru/icerock/mobile_media/2020/November/cherna-pyatnica.png",
                         "promoURL": "promoURL5",
-                        "promoUuid": "f913f8c6-4562-47c5-8fd0-f768789ed2d3"
+                        "promoUuid": "46596913-d72f-41ac-95cc-bf56282b59ef"
                     },
                     {
                         "caption": "Смарт-часы Apple Watch Series 6",
                         "imageURL": "https://static.mvideo.ru/icerock/mobile_media/2020/September/frame_1.jpg",
                         "promoURL": "promoURL3",
-                        "promoUuid": "12b3f450-c9b9-4c2c-ba0e-20c7a4465208"
+                        "promoUuid": "3f9b8183-a658-440c-8050-2a7745523808"
                     }
                 ]
             }       
