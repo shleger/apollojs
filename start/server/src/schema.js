@@ -24,7 +24,6 @@ interface CoreBlock {
   caption: String
   order: Int
   scrollType: ScrollType
-  headers: [BlockHeader]
 }
 
 type Block implements CoreBlock {
@@ -33,7 +32,6 @@ type Block implements CoreBlock {
   caption: String
   order: Int
   scrollType: ScrollType
-  headers: [BlockHeader]
 }
 enum ScrollType {
   noScroll
@@ -48,15 +46,13 @@ enum BlockType {
   shelf
 }
 
-interface BlockHeader {
-  caption: String
+interface BlockOptions {
   viewOptions: ViewOptions
 }
 
-type PromoBlock implements BlockHeader {
-  caption: String
-  items:[PromoItem]
+type PromoBlock implements BlockOptions {
   viewOptions: ViewOptions
+  items:[PromoItem]
 }
 
 type PromoItem {
@@ -66,10 +62,9 @@ type PromoItem {
   promoUuid: String
 }
 
-type ShelfBlock implements BlockHeader {
-  caption: String
-  materials: [Material]
+type ShelfBlock implements BlockOptions {
   viewOptions: ViewOptions
+  materials: [Material]
 }
 
 type Material {
@@ -109,6 +104,7 @@ type ButtonOptions{
   card: Boolean
   favorites: Boolean
   compare: Boolean
+  close: Boolean
 }
 
 enum ArticleType {
