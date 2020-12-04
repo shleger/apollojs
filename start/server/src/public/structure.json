@@ -1,5 +1,12 @@
       [
         {
+          "type": "banners",
+          "id": "promo",
+          "caption": "Выгодные акции",
+          "order": 1,
+          "scrollType": "horizontalScroll"
+        },
+        {
           "type": "shelf",
           "id": "hits",
           "caption": "Хиты продаж",
@@ -11,13 +18,6 @@
           "id": "goodofday",
           "caption": "Товары дня",
           "order": 3,
-          "scrollType": "horizontalScroll"
-        },
-        {
-          "type": "banners",
-          "id": "promo",
-          "caption": "Выгодные акции",
-          "order": 1,
           "scrollType": "horizontalScroll"
         }
       ]
