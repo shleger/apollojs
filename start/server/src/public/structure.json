@@ -1,23 +1,120 @@
-      [
-        {
-          "type": "shelf",
-          "id": "hits",
-          "caption": "Хиты продаж",
-          "order": 2,
-          "scrollType": "horizontalScroll"
-        },
-        {
-          "type": "shelf",
-          "id": "goodofday",
-          "caption": "Товары дня",
-          "order": 3,
-          "scrollType": "horizontalScroll"
-        },
-        {
-          "type": "banners",
-          "id": "promo",
-          "caption": "Выгодные акции",
-          "order": 1,
-          "scrollType": "horizontalScroll"
-        }
-      ]
+[
+  {
+    "container": "personal",
+    "scrollType": "horizontalScroll",
+    "viewOptions": {
+      "background": {
+        "color": "",
+        "imageUrl": ""
+      }
+    },
+    "blocks": [
+      {
+        "type": "banner-auth",
+        "auth": false,
+        "query": "banner",
+        "id": "banner-auth"
+      },
+      {
+        "type": "map",
+        "query": "getMap",
+        "auth": false,
+        "id": "map1"
+      },
+      {
+        "type": "personal-orders",
+        "query": "getPersonalOrders",
+        "auth": true,
+        "id": "personal-orders"
+      },
+      {
+        "type": "personal-balance",
+        "query": "getPersonalBalance",
+        "auth": true,
+        "id": "personal-balance"
+      },
+      {
+        "type": "personal-promo",
+        "query": "getPersonalPromo",
+        "auth": true,
+        "id": "personal-promo"
+      },
+      {
+        "type": "map",
+        "auth": true,
+        "id": "map2"
+      }
+    ]
+  },
+  {
+    "container": "search",
+    "scrollType": "horizontalScroll",
+    "viewOptions": {
+      "background": {
+        "color": "",
+        "imageUrl": ""
+      }
+    },
+    "blocks": [
+      {
+        "type": "search",
+        "query": "search",
+        "id": "search1"
+      }
+    ]
+  },
+  {
+    "container": "banners",
+    "caption": "Выгодные акции",
+    "scrollType": "horizontalScroll",
+    "viewOptions": {
+      "button": {
+        "text": "Все акции",
+        "link": "promoList"
+      }
+    },
+    "blocks": [
+      {
+        "id": "promo1",
+        "type": "promo",
+        "query": "getPromo"
+      }
+    ]
+  },
+  {
+    "container": "hits",
+    "caption": "Хиты продаж",
+    "scrollType": "horizontalScroll",
+    "blocks": [
+      {
+        "id": "shelf1",
+        "type": "shelf",
+        "query": "getShelf(cmsId)"
+      }
+    ]
+  },
+  {
+    "container": "goodOfDay",
+    "caption": "Товары дня",
+    "scrollType": "horizontalScroll",
+    "blocks": [
+      {
+        "id": "goodofday1",
+        "type": "shelf",
+        "query": "getShelf(cmsId)"
+      }
+    ]
+  },
+  {
+    "container": "trends",
+    "caption": "В тренде",
+    "scrollType": "horizontalScroll",
+    "blocks": [
+      {
+        "id": "goodofday1",
+        "type": "shelf",
+        "query": "getShelf(cmsId)"
+      }
+    ]
+  }
+]

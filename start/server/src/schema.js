@@ -18,21 +18,20 @@ type Query {
 #TODO insert mutation queries
 #}
 
-interface CoreBlock {
-  type: String!
-  id: ID!
-  caption: String
-  order: Int
+type Container implements BlockOptions{
   scrollType: ScrollType
+  container: String
+  viewOptions: ViewOptions
+  blocks: [Block]
 }
 
-type Block implements CoreBlock {
+type Block {
   type: String!
+  auth: Boolean
+  query: String!
   id: ID!
-  caption: String
-  order: Int
-  scrollType: ScrollType
 }
+
 enum ScrollType {
   noScroll
   horizontalScroll
@@ -98,6 +97,12 @@ type Conditions {
 
 type ViewOptions{
   buttons: ButtonOptions
+  background: BackgroundOptions
+}
+
+type BackgroundOptions{
+  color: String
+  imageUrl: String
 }
 
 type ButtonOptions{
@@ -119,7 +124,7 @@ enum StatusType {
 
 type MainPageStructure {
   version: String
-  blocks: [Block]
+  content: [Container]
 }
 
 
