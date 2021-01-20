@@ -265,6 +265,11 @@
         "background": "red",
         "url": "/action/click"
       }
-    }
+    },
+    "blocks":[{
+      "type": "notFoundTypePlaceholder",
+      "query": "notFoundQueryPlaceholder",
+      "id": "notFoundIdPlaceholder"
+    }]
   }
 ]
