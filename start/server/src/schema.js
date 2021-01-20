@@ -18,10 +18,10 @@ type Query {
 #TODO insert mutation queries
 #}
 
-type Container implements BlockOptions{
-  scrollType: ScrollType
-  container: String
-  viewOptions: ViewOptions
+type Container {
+  containerId: String
+  containerType: String
+  options: ContainerOptions
   blocks: [Block]
 }
 
@@ -45,12 +45,37 @@ enum BlockType {
   shelf
 }
 
-interface BlockOptions {
-  viewOptions: ViewOptions
+
+type ContainerOptions {
+  caption: String
+  scroll:ScrollType 
+  background: Background
+  button: Button
 }
 
-type PromoBlock implements BlockOptions {
-  viewOptions: ViewOptions
+type Background {
+  image: String
+  color: String
+}
+
+type  Button{
+  title: String
+  background: Background
+  url: String
+  showSize: Boolean
+  date: DatePeriod
+
+}
+
+type DatePeriod{
+  start: String
+  end: String
+}
+
+
+
+type PromoBlock {
+  options: BlockOptions
   items:[PromoItem]
 }
 
@@ -61,8 +86,8 @@ type PromoItem {
   promoUuid: String
 }
 
-type ShelfBlock implements BlockOptions {
-  viewOptions: ViewOptions
+type ShelfBlock{
+  options: BlockOptions
   materials: [Material]
 }
 
@@ -95,7 +120,7 @@ type Conditions {
 
 
 
-type ViewOptions{
+type BlockOptions{
   buttons: ButtonOptions
   background: BackgroundOptions
 }
@@ -127,8 +152,7 @@ type MainPageStructure {
   content: [Container]
 }
 
-
-  
+ 
   
 `;
 

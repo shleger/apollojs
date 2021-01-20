@@ -12,6 +12,7 @@ const app = express();
 app.use('/static', express.static(__dirname + '/public'));
 server.applyMiddleware({ app });
 
+// @include(unless null) ??
 
 app.get("/", (req, res) => {
   res.status(301).redirect(`${server.graphqlPath}`)

@@ -1,4 +1,8 @@
 const mocks = {
+  String: () => null,
+  Boolean: () => null,
+  Int: () => null,
+  
   PromoBlockItem: () => ([{
     type: "ssss",
     id: "uid",

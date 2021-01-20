@@ -1,120 +1,268 @@
 [
   {
-    "container": "personal",
-    "scrollType": "horizontalScroll",
-    "viewOptions": {
+    "containerId": "personal_1",
+    "containerType": "personal-auth",
+    "options": {
       "background": {
-        "color": "",
-        "imageUrl": ""
-      }
+        "image": "grey"
+      },
+      "scroll": "horizontalScroll"
     },
     "blocks": [
       {
-        "type": "banner-auth",
-        "auth": false,
-        "query": "banner",
-        "id": "banner-auth"
+        "type": "personalCaption",
+        "query": "getPersonalCaption",
+        "id": "personalCaption1"
       },
       {
-        "type": "map",
-        "query": "getMap",
-        "auth": false,
-        "id": "map1"
-      },
-      {
-        "type": "personal-orders",
+        "type": "personalOrders",
         "query": "getPersonalOrders",
-        "auth": true,
-        "id": "personal-orders"
+        "id": "personalOrders1"
       },
       {
-        "type": "personal-balance",
+        "type": "personalBalance",
         "query": "getPersonalBalance",
-        "auth": true,
-        "id": "personal-balance"
+        "id": "personalBalance1"
       },
       {
-        "type": "personal-promo",
+        "type": "personalPromo",
         "query": "getPersonalPromo",
-        "auth": true,
-        "id": "personal-promo"
+        "id": "personalPromo1"
+      },
+      {
+        "type": "personalRateApp",
+        "query": "getPersonalRateApp",
+        "id": "personalRateApp1"
       },
       {
         "type": "map",
-        "auth": true,
-        "id": "map2"
+        "id": "map",
+        "option": {
+          "url": "/action/click"
+        }
       }
     ]
   },
   {
-    "container": "search",
-    "scrollType": "horizontalScroll",
-    "viewOptions": {
+    "containerId": "personal_2",
+    "containerType": "personal-no-auth",
+    "options": {
       "background": {
-        "color": "",
-        "imageUrl": ""
-      }
+        "image": "grey"
+      },
+      "scroll": "horizontalScroll"
     },
+    "blocks": [
+      {
+        "type": "appHeader",
+        "query": "getAppHeader",
+        "id": "header1"
+      },
+      {
+        "type": "signIn",
+        "query": "null",
+        "id": "signIn"
+      },
+      {
+        "type": "noAuthBanners",
+        "query": "getPersonalBanners[...]",
+        "id": "banner1"
+      },
+      {
+        "type": "noAuthBanners",
+        "query": "getPersonalBanners[...]",
+        "id": "banner2"
+      },
+      {
+        "type": "noAuthBanners",
+        "query": "getPersonalBanners[...]",
+        "id": "banner3"
+      },
+      {
+        "type": "noAuthBanners",
+        "query": "getPersonalBanners[...]",
+        "id": "banner4"
+      },
+      {
+        "type": "noAuthBanners",
+        "query": "getPersonalBanners[...]",
+        "id": "banner5"
+      },
+      {
+        "type": "noAuthMap",
+        "id": "map1",
+        "option": {
+          "url": "/action/click"
+        }
+      }
+    ]
+  },
+  {
+    "containerId": "search1",
+    "containerType": "search",
+    "options": {},
     "blocks": [
       {
         "type": "search",
         "query": "search",
-        "id": "search1"
+        "id": "search1",
+        "options": {
+          "background": {
+            "color": "grey"
+          }
+        }
       }
     ]
   },
   {
-    "container": "banners",
-    "caption": "Выгодные акции",
-    "scrollType": "horizontalScroll",
-    "viewOptions": {
+    "containerId": "promo_1",
+    "containerType": "promo",
+    "options": {
       "button": {
-        "text": "Все акции",
-        "link": "promoList"
+        "title": "Все акции",
+        "background": {
+          "color": "grey"
+        },
+        "url": "/action/click"
       }
     },
     "blocks": [
       {
-        "id": "promo1",
         "type": "promo",
-        "query": "getPromo"
+        "query": "getPromo",
+        "id": "promo1"
       }
     ]
   },
   {
-    "container": "hits",
-    "caption": "Хиты продаж",
-    "scrollType": "horizontalScroll",
+    "containerId": "goodOfDay_1",
+    "containerType": "goodOfDay",
+    "options": {
+      "caption": "Товары дня",
+      "showSize": true,
+      "background": {
+        "color": "white"
+      },
+      "date": {
+        "start": "2020-12-21",
+        "end": "2020-12-31"
+      }
+    },
     "blocks": [
       {
-        "id": "shelf1",
         "type": "shelf",
-        "query": "getShelf(cmsId)"
+        "query": "getShelf(goodOfDay1)",
+        "id": "goodOfDay1",
+        "options": {
+          "buttons": {
+            "cart": true
+          },
+          "background": {
+            "color": "white"
+          }
+        }
       }
     ]
   },
   {
-    "container": "goodOfDay",
-    "caption": "Товары дня",
-    "scrollType": "horizontalScroll",
+    "containerId": "hits1",
+    "containerType": "hits",
+    "options": {
+      "caption": "Хиты продаж",
+      "background": {
+        "color": "turquoise"
+      }
+    },
     "blocks": [
       {
-        "id": "goodofday1",
         "type": "shelf",
-        "query": "getShelf(cmsId)"
+        "query": "getShelf(hits1)",
+        "id": "hits1",
+        "options": {
+          "buttons": {
+            "cart": false
+          },
+          "background": {
+            "color": "grey"
+          }
+        }
       }
     ]
   },
   {
-    "container": "trends",
-    "caption": "В тренде",
-    "scrollType": "horizontalScroll",
+    "containerId": "banners_1",
+    "containerType": "banners",
     "blocks": [
       {
-        "id": "goodofday1",
-        "type": "shelf",
-        "query": "getShelf(cmsId)"
+        "type": "banners",
+        "query": "getBanners",
+        "id": "banners1"
       }
     ]
+  },
+  {
+    "containerId": "shelfGroup_1",
+    "containerType": "shelfGroup",
+    "blocks": [
+      {
+        "type": "shelfGroup",
+        "query": "getShelfGroup",
+        "id": "shelfGroup1",
+        "options": {
+          "underline": "Смотреть все",
+          "background": {
+            "color": "grey"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "containerId": "reviews_1",
+    "containerType": "review",
+    "options": {
+      "caption": "Mag",
+      "icon": "path/to/icon",
+      "button": {
+        "title": "Все новости и обзоры",
+        "background": "grey",
+        "url": "/action/click"
+      }
+    },
+    "blocks": [
+      {
+        "type": "review",
+        "query": "getReviews",
+        "id": "review1"
+      }
+    ]
+  },
+  {
+    "containerId": "alreadyViewed_1",
+    "containerType": "alreadyViewed",
+    "options": {
+      "caption": "Вы смотрели",
+      "icon": "path/to/icon"
+    },
+    "blocks": [
+      {
+        "type": "alreadyViewed",
+        "query": "alreadyViewed",
+        "id": "alreadyViewed1"
+      }
+    ]
+  },
+  {
+    "containerId": "notFound_1",
+    "containerType": "notFound",
+    "options": {
+      "caption": "Не заинтересовало?",
+      "text": "Возможно вы найдете что-то среди наших акций",
+      "button": {
+        "title": "Все акции",
+        "background": "red",
+        "url": "/action/click"
+      }
+    }
   }
 ]
