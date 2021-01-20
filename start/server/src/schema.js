@@ -26,9 +26,9 @@ type Container {
 }
 
 type Block {
-  type: String!
+  type: String
   auth: Boolean
-  query: String!
+  query: String
   id: ID!
 }
 

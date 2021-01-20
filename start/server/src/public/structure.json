@@ -36,6 +36,7 @@
       },
       {
         "type": "map",
+        "query": "getMap",
         "id": "map",
         "option": {
           "url": "/action/click"
@@ -60,7 +61,7 @@
       },
       {
         "type": "signIn",
-        "query": "null",
+        "query": "getSignIn",
         "id": "signIn"
       },
       {
@@ -90,6 +91,7 @@
       },
       {
         "type": "noAuthMap",
+        "query": "getMap",
         "id": "map1",
         "option": {
           "url": "/action/click"
