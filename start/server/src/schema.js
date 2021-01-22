@@ -10,13 +10,23 @@ schema {
 
 type Query {
   structure : MainPageStructure
+  getStructure (apiRequestHeader: ApiRequestHeader): MainPageStructure
   banners (blockId: String): PromoBlock
   shelf (blockId: String): ShelfBlock
+  getPersonalBanner: PersonalBlockResponse
 }
 
 #type Mutation {
 #TODO insert mutation queries
 #}
+
+input ApiRequestHeader {
+  uniqueInstallationId: String!
+  location: String!
+  sessionId: String
+  os: String!
+  app_version: String!
+ }
 
 type Container {
   containerId: String
@@ -56,6 +66,8 @@ type ContainerOptions {
 type Background {
   image: String
   color: String
+  transparent: Int!
+  imageUrl: String!
 }
 
 type  Button{
@@ -152,8 +164,72 @@ type MainPageStructure {
   content: [Container]
 }
 
- 
-  
+
+enum AppLink {
+  auth   # экран авторизации
+  map   # карта с магазинами
+  profile  # профиль
+  orderDetail  # детали заказа
+  orderList  # список заказов
+  rateApp # экран оценки приложения
+  rateOrder # экран оценки заказа
+  rateProduct # экран оценки товара
+  productDetail # карточка товара
+  promoDetail # экран с деталями перс.предложения
+  loyalty # экран с условиями программы лояльности
+}
+enum WidgetType {
+  signIn #кнопка авторизации в неавторизованном перс.блоке
+  noAuthBanner #баннер с призывом авторизоваться в неавторизованном перс.блоке
+  noAuthMap #карта магазинов в неавторизованном перс.блоке
+  authMap #карта магазинов в авторизованном перс.блоке
+  personalOrder #виджет с активным заказом (убер пикап)
+  personalBalance #виджет с балансом бонусных рублей
+  personalPromo #виджет с перс.предложением
+  rateApp #оцените приложение
+}
+interface BlockWidget {
+  type: WidgetType!
+  id: String!
+  caption: String!
+  text: String
+  imageUrl: String!
+  link: AppLink!
+}
+
+type PersonalBlockWidget implements BlockWidget {
+  type: WidgetType!
+  id: String!
+  caption: String!
+  text: String
+  imageUrl: String!
+  link: AppLink!
+}
+
+enum ButtonShape {
+  rectangle 
+  #прямоугольная
+  rounded 
+  #прямоугольная со скругленными углами
+  elipse 
+  #овальная
+}
+
+type PersonalViewOptions {
+  button: ButtonStyle!
+}
+type ButtonStyle {
+  # must?
+  shape: ButtonShape
+  color: String!
+}
+
+
+type PersonalBlockResponse {
+  #options: PersonalViewOptions
+  items: PersonalBlockWidget
+}
+
 `;
 
 module.exports = typeDefs;

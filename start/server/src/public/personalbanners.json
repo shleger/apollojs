@@ -1,0 +1,9 @@
+{
+  "items":[{
+    "type": "noAuthBanner",
+    "id": "banner1",               
+    "caption": "Здесь будут данные о ваших заказах",
+    "imageUrl": "box.png",
+    "link": "auth"         
+}]    
+  }
