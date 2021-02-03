@@ -1,4 +1,5 @@
-let struct = require('./public/structure.json')
+let struct = require('./public/structure.json');
+let persBanners = require('./public/personalbanners.json');
 
 // const { GraphQLDate, GraphQLTime, GraphQLDateTime } = require('graphql-iso-date') ;
 
@@ -6,10 +7,32 @@ let struct = require('./public/structure.json')
 //   Date: GraphQLDateTime
 // };
 
+    // Date: GraphQLDate,
+    // Query: {
+    //     getPersonalBanners: () => ({
+    //         items: persBanners
+
+    //     }),
 
 const resolvers = {
     // Date: GraphQLDate,
     Query: {
+        getPersonalBanners: () => ({
+            items: persBanners
+
+        }),
+        getPersonalBanner(parent, args, context, info)  {
+            let result = persBanners.find(item => item.id === args.id)
+            return {items: [result]}
+            //return {items: persBanners}
+
+        },
+        personalBanner(parent, args, context, info)  {
+            let result = persBanners.find(item => item.id === args.id)
+            return {items: [result]}
+            //return {items: persBanners}
+
+        },
         structure: () => ({
             version: "1.0.0",
             content: struct

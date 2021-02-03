@@ -1,0 +1,45 @@
+[
+	{
+        "type": "signIn",
+        "id": "signIn",
+        "caption": "Войти",
+        "icon": "user",
+        "link": "auth"         
+    },
+    {
+        "type": "noAuthBanner",
+        "id": "banner1",
+        "caption": "Здесь будут данные о ваших заказах",
+        "icon": "box",
+        "link": "auth"         
+    },
+    {
+        "type": "noAuthBanner",
+        "id": "banner2",
+        "caption": "Забирайте товары прямо из магазина",
+        "icon": "box",
+        "link": "auth"
+    },
+    {
+        "type": "noAuthBanner",
+        "id": "banner3",
+        "caption": "Персональные предложения",
+        "icon": "box",
+        "link": "auth"
+    },
+    {
+        "type": "noAuthBanner",
+        "id": "banner4",
+        "caption": "Оплачивайте кредит в приложении",
+        "icon": "box",
+        "link": "auth"
+    },
+    {
+        "type": "noAuthBanner",
+        "id": "banner5",
+        "caption": "Специальные промокоды для вас",
+        "icon": "box",
+        "link": "auth"
+    }    
+]    
+  

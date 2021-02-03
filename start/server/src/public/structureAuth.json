@@ -1,0 +1,236 @@
+[
+  {
+    "containerId": "personal_1",
+    "containerType": "personalAuth",
+    "options": {
+      "caption": "Константин, добрый день.",
+      "scroll": "horizontal",
+      "background": {
+        "imageUrl": "gradient.png",
+        "color": "gradient"
+      },
+      "blockOptions": {
+        "buttonStyle": "primary"
+      }  
+
+    },
+    "blocks": [
+      {
+        "type": "appHeader",
+        "query": "",
+        "id": "header1"
+      },
+      {
+        "type": "personalCaption",
+        "query": "",
+        "id": "personalCaption1"
+      },
+      {
+        "type": "personalOrder",
+        "query": "personalOrder",
+        "id": "personalOrders1"
+      },
+      {
+        "type": "personalBalance",
+        "query": "personalBalance",
+        "id": "personalBalance1"
+      },
+      {
+        "type": "personalPromo",
+        "query": "personalPromo",
+        "id": "personalPromo1"
+      },
+      {
+        "type": "mapAuth",
+        "query": "personalMap",
+        "id": "mapAuth"
+      }
+    ]
+  },
+  {
+    "containerId": "search1",
+    "containerType": "search",
+    "options": {},
+    "blocks": [
+      {
+        "type": "search",
+        "query": "search",
+        "id": "search1",
+        "options": {
+          "background": {
+            "color": "grey"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "containerId": "promo_1",
+    "containerType": "promo",
+    "options":{
+      "scroll": "horizontal",
+      "blockOptions": {
+        "blockSize": "normal",
+        "buttons": [
+            {
+              "style": "secondary",
+              "caption": "Все акции",        
+              "link": "promoList"
+            }
+        ]     
+      }
+    },  
+    "blocks": [
+      {
+        "type": "promo",
+        "query": "getPromo",
+        "id": "promo1"
+      }
+    ]
+  },
+  {
+    "containerId": "goodOfDay_1",
+    "containerType": "goodOfDay",
+    "options": {
+      "caption": "Товары дня",
+      "showSize": true,
+      "background": {
+        "color": "white"
+      },
+      "date": {
+        "start": "2020-12-21",
+        "end": "2020-12-31"
+      }
+    },
+    "blocks": [
+      {
+        "type": "shelf",
+        "query": "getShelf(goodOfDay1)",
+        "id": "goodOfDay1",
+        "options": {
+          "buttons": {
+            "cart": true
+          },
+          "background": {
+            "color": "white"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "containerId": "shelf1",
+    "containerType": "shelf",
+    "options": {
+      "caption": "Хиты продаж",
+      "scroll": "horizontal",
+      "background": {
+        "color": "white"
+      }
+    },
+    "blocks": [
+      {
+        "type": "shelf",
+        "query": "shelf",
+        "id": "Хиты продаж",
+        "options": {          
+          "productCardOptions": {
+              "cardBackground": {
+                  "color": "grey"
+              },  
+              "displayActionsLabel": false,
+              "displayDiscountLabel": true,
+              "displayOldPrice": true,
+              "displayCartButton": false,
+              "displayFavoriteIcon": false,
+              "displayCampareIcon": false,
+              "displayCreditInfo": false,
+              "displayProductStatus": true,
+              "displayRating": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "containerId": "banners_1",
+    "containerType": "banners",
+    "blocks": [
+      {
+        "type": "banners",
+        "query": "getBanners",
+        "id": "banners1"
+      }
+    ]
+  },
+  {
+    "containerId": "shelfGroup_1",
+    "containerType": "shelfGroup",
+    "blocks": [
+      {
+        "type": "shelfGroup",
+        "query": "getShelfGroup",
+        "id": "shelfGroup1",
+        "options": {
+          "underline": "Смотреть все",
+          "background": {
+            "color": "grey"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "containerId": "reviews_1",
+    "containerType": "review",
+    "options": {
+      "caption": "Mag",
+      "icon": "path/to/icon",
+      "button": {
+        "title": "Все новости и обзоры",
+        "background": "grey",
+        "url": "/action/click"
+      }
+    },
+    "blocks": [
+      {
+        "type": "review",
+        "query": "getReviews",
+        "id": "review1"
+      }
+    ]
+  },
+  {
+    "containerId": "alreadyViewed_1",
+    "containerType": "alreadyViewed",
+    "options": {
+      "caption": "Вы смотрели",
+      "icon": "path/to/icon"
+    },
+    "blocks": [
+      {
+        "type": "alreadyViewed",
+        "query": "alreadyViewed",
+        "id": "alreadyViewed1"
+      }
+    ]
+  },
+  {
+    "containerId": "notFound_1",
+    "containerType": "notFound",
+    "options": {
+      "caption": "Не заинтересовало?",
+      "text": "Возможно вы найдете что-то среди наших акций",
+      "button": {
+        "title": "Все акции",
+        "background": "red",
+        "url": "/action/click"
+      }
+    },
+    "blocks":[{
+      "type": "notFoundTypePlaceholder",
+      "query": "notFoundQueryPlaceholder",
+      "id": "notFoundIdPlaceholder"
+    }]
+  }
+]
