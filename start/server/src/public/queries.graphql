@@ -44,7 +44,7 @@ fragment blockOptionsFragment on BlockOptions {
   }
   ... on NotFoundBlockOptions {
     title
-    text
+    description
     background {
       color
     }

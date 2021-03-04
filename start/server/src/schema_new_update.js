@@ -296,7 +296,7 @@ type PersonalWidget  {
   type: BlockType!
   id: String!
   title: String!
-  text: String
+  description: String
   
   icon: String# либо идентификатор локального ресурса либо  URL
   
@@ -307,7 +307,7 @@ type PersonalBalance  {
   type: BlockType!  
   id: String!
   title: String!
-  text: String
+  description: String
   icon: String #icon -то, что выглядит как иконка
   link: AppLink!
   balance: Int!
@@ -317,7 +317,7 @@ type personalPromo  {
   type: BlockType!  
   id: String
   title: String!
-  text: String
+  description: String
   imageUrl: String
   localImage: LocalImage
   link: AppLink!
@@ -335,7 +335,7 @@ type PersonalOrder {
   type: WidgetType!
   id: String!  
   title: String!
-  text: String
+  description: String
   imageUrl: String
   localImage: LocalImage
   orderCount: Int!
@@ -351,7 +351,7 @@ type PersonalOrder {
 
 type NotFoundItem {
   title: String
-  text: String
+  description: String
   background: Background
   buttons: [Button]
 }

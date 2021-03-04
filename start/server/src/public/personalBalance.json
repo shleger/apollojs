@@ -3,7 +3,7 @@
             "type": "personalBalance",
             "id": "balanceVariant1",
             "title": "1998 Бонусных рублей",                   
-            "text": "Успейте потратить 100 Бонусных рублей до 31.01.2021",
+            "description": "Успейте потратить 100 Бонусных рублей до 31.01.2021",
             "imageUrl": "clock.png",
             "link": "profile",
             "balance": 1998
@@ -12,7 +12,7 @@
             "type": "personalBalance",
             "id": "balanceVariant2",
             "title": "Нет Бонусных рублей",                   
-            "text": "Скоро будут доступны 100 Бонусных рублей",
+            "description": "Скоро будут доступны 100 Бонусных рублей",
             "imageUrl": "star.png",
             "link": "balance",
             "balance": 0
@@ -21,7 +21,7 @@
             "type": "personalBalance",
             "id": "balanceVariant3",
             "title": "1998 Бонусных рублей",                   
-            "text": "Дозаполните профиль, чтобы получать больше Бонусных рублей и персональные предложения",
+            "description": "Дозаполните профиль, чтобы получать больше Бонусных рублей и персональные предложения",
             "imageUrl": "pen.png",
             "link": "profile",
             "balance": 1998
@@ -30,7 +30,7 @@
             "type": "personalBalance",
             "id": "balanceVariant4",
             "title": "1998 Бонусных рублей",                   
-            "text": "Не забудьте использовать Бонусные рубли при оплате следующей покупки!",
+            "description": "Не забудьте использовать Бонусные рубли при оплате следующей покупки!",
             "imageUrl": "smile.png",
             "link": "balance",
             "balance": 1998
@@ -39,7 +39,7 @@
             "type": "personalBalance",
             "id": "balanceVariant5",
             "title": "Нет Бонусных рублей",                   
-            "text": "Покупайте товары в М.Видео, получайте Бонусные рубли и оплачивайте ими до 50% стоимости покупки!",
+            "description": "Покупайте товары в М.Видео, получайте Бонусные рубли и оплачивайте ими до 50% стоимости покупки!",
             "imageUrl": "like.png",
             "link": "loyalty",
             "balance": 0

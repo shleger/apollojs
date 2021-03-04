@@ -45,7 +45,7 @@ type NotFoundItem {
   type: BlockType!
   id: String!
   title: String
-  text: String
+  description: String
   background: Background
   buttons: [Button]
 }
@@ -54,7 +54,7 @@ type PersonalMapItem{
   type: BlockType!
   id: String!
   title: String!
-  #text: String
+  #description: String
   icon: String # либо идентификатор локального ресурса либо  URL
   link: AppLink
   shopIds: [Int]
@@ -64,7 +64,7 @@ type PersonalPromoItem{
   type: BlockType!
   id: String!
   title: String!
-  text: String
+  description: String
   icon: String! # либо идентификатор локального ресурса либо  URL
   link: AppLink!
   campaignId: String
@@ -77,7 +77,7 @@ type PersonalOrderItem{
   type: BlockType!
   id: String!
   title: String!
-  text: String
+  description: String
   icon: String# либо идентификатор локального ресурса либо  URL
   link: AppLink
   orderCount: Int!
@@ -91,7 +91,7 @@ type PersonalBalanceItem {
   type: BlockType!
   id: String!
   title: String!
-  text: String
+  description: String
   icon: String# либо идентификатор локального ресурса либо  URL
   link: AppLink
   balance: Int!
@@ -101,7 +101,7 @@ type PersonalNoAuthItem{
   type: BlockType!
   id: String!
   title: String!
-  text: String
+  description: String
   icon: String# либо идентификатор локального ресурса либо  URL
   link: AppLink
 }
@@ -237,14 +237,14 @@ type ProductStateInfo {
 }
 type NotFoundBlockOptions {
   title: String
-  text: String
+  description: String
   background: Background
   buttons: [Button]
 }
 
 type MMagBlockOptions {
   title: String
-  text: String
+  description: String
   url: String
   background: Background
   buttons: [Button]
@@ -257,7 +257,7 @@ type MMagBlockOptions {
 #   buttons: [Button] #описание кнопок в блоке - используется в промо-блоке и блоке "Не нашли"
 
 #   title: String #заголовок - используется в подборках и блоке "Не нашли"
-#   text: String #подзаголовок - используется в блоке "Не нашли"
+#   description: String #подзаголовок - используется в блоке "Не нашли"
 #   period: Period #срок действия подборки, заполняется для товаров дня
 #   background: Background #фон блока с подборкой  - используется в подборках и блоке "Не нашли"
 #   productsCount: Int #количество элементов, выводимых в подборке на главной / количество видимых элементов в блоке с переключателями  

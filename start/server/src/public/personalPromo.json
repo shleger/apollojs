@@ -2,7 +2,7 @@
     {
         "type": "personalPromo",
         "title": "Персональное предложение",
-        "text": "Кэшбэк 20 %",
+        "description": "Кэшбэк 20 %",
         "imageUrl": "https://static.mvideo.ru/icerock/target_campaign/PP_mobbap_1602_2.png",
         "link": "promoDetail",
         "campaignId": "C-00242835",

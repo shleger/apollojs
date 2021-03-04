@@ -259,7 +259,7 @@
     "containerType": "notFound",
     "options": {
       "title": "Не заинтересовало?",
-      "text": "Возможно вы найдете что-то среди наших акций",
+      "description": "Возможно вы найдете что-то среди наших акций",
       "button": {
         "title": "Все акции",
         "background": "red",
