@@ -12,9 +12,9 @@
         "id": "appHeader"
       },
       {
-        "type": "personalCaption",
+        "type": "personalTitle",
         "query": "",
-        "id": "personalCaption"
+        "id": "personalTitle"
       }
     ]  
   },  

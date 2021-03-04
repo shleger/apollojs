@@ -10,9 +10,9 @@
     },
     "blocks": [
       {
-        "type": "personalCaption",
+        "type": "personalTitle",
         "query": "getPersonalCaption",
-        "id": "personalCaption1"
+        "id": "personalTitle1"
       },
       {
         "type": "personalOrders",

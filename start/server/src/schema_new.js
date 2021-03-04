@@ -23,11 +23,9 @@ type Query {
 
   shelfItems (id: ID!, type: String, itemsCount: Int, getAll:Boolean): [ShelfItem]
 
-
   notFoundItem: NotFoundItem
 
   mMagItems: [MMagItem]
-
 
 }
 
