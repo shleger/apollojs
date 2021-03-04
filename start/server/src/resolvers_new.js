@@ -9,26 +9,16 @@ let persOrder = require('./public/personalOrder.json');
 let promoBlockItems = require('./public/promoBlockItems.json');
 
 let shelfBlock = require('./public/shelfBlock.json');
+let shelfGroup = require('./public/shelfGroup.json');
+
+let persPromo = require('./public/personalPromo.json');
 
 const resolvers = {
-    BlockOptions: {
-        __resolveType(obj, context, info){
-          if(obj.buttonStyle){
-            return 'PersonalBlockOptions';
-          }
-          if(obj.blockSize){
-            return 'PromoBlockOptions';
-          }
-          if(obj.cardBackground){
-            return 'ProductCardOptions';
-          }
-          if(obj.productCardOptions){
-            return 'ShelfBlockOptions';
-          }
-          return 'PersonalBlockOptions'; // GraphQLError is thrown
-        },
-    },
+    
     Query: {
+        personalPromo: () => ({
+            items: persPromo
+        }),
         personalMapAuth: () => ({
             "type": "authMap",
             "id": "AuthMap",
@@ -93,12 +83,14 @@ const resolvers = {
         }),
         structureAuth: () => ({
             version: "1.0.0",
-            content: structAuth
+            options: {"background": {"color": "gradient"}},      
+            content: structAuth //структура авторизованого. для неавторизованного использовать structNoAuth
 
         }),
         structureNoAuth: () => ({
             version: "1.0.0",
-            content: structNoAuth
+            options: {"background": {"color": "gradient"}},
+            content: structNoAuth //структура неавторизованого. для авторизованного использовать structAuth            
 
         }),
         
@@ -109,12 +101,11 @@ const resolvers = {
         },
         
         shelf (parent, args, context, info) {            
-            let result =  {
-                "options": shelfBlock.options,
-                "products": shelfBlock.products
-            };            
-            return result;
-        }   
+            //return {items: shelfBlock}
+            return {items: shelfGroup}
+        } 
+        
+        
     }
 };
 

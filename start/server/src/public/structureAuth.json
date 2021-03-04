@@ -1,30 +1,36 @@
 [
   {
-    "containerId": "personal_1",
-    "containerType": "personalAuth",
-    "options": {
-      "caption": "Константин, добрый день.",
-      "scroll": "horizontal",
-      "background": {
-        "imageUrl": "gradient.png",
-        "color": "gradient"
-      },
-      "blockOptions": {
-        "buttonStyle": "primary"
-      }  
-
-    },
+    "containerId": "header",
+    "containerType": "header",
+    "options": {      
+      "scroll": "vertical"
+    },  
     "blocks": [
       {
         "type": "appHeader",
-        "query": "",
-        "id": "header1"
+        "query": "appHeader",
+        "id": "appHeader"
       },
       {
         "type": "personalCaption",
         "query": "",
-        "id": "personalCaption1"
+        "id": "personalCaption"
+      }
+    ]  
+  },  
+  {
+    "containerId": "personal_1",
+    "containerType": "personalAuth",
+    "options": {      
+      "scroll": "horizontal",
+      "background": {
+        "transparent": 100
       },
+      "blockOptions": {
+        "buttonStyle": "primary"
+      }  
+    },
+    "blocks": [      
       {
         "type": "personalOrder",
         "query": "personalOrder",
@@ -41,7 +47,7 @@
         "id": "personalPromo1"
       },
       {
-        "type": "mapAuth",
+        "type": "authMap",
         "query": "personalMap",
         "id": "mapAuth"
       }
@@ -67,52 +73,56 @@
   {
     "containerId": "promo_1",
     "containerType": "promo",
-    "options":{
-      "scroll": "horizontal",
-      "blockOptions": {
-        "blockSize": "normal",
-        "buttons": [
-            {
-              "style": "secondary",
-              "caption": "Все акции",        
-              "link": "promoList"
-            }
-        ]     
-      }
-    },  
+    "options": {
+      "scroll": "horizontal"
+    },    
     "blocks": [
       {
         "type": "promo",
-        "query": "getPromo",
-        "id": "promo1"
+        "query": "promoBlock",
+        "id": "promo1",
+        "options": {
+          "blockSize": "normal",
+          "buttons": [
+              {
+                "style": "secondary",
+                "caption": "Все акции",        
+                "link": "promoList"
+              }
+          ]      
+        }
       }
     ]
   },
   {
     "containerId": "goodOfDay_1",
-    "containerType": "goodOfDay",
+    "containerType": "goodOfDay",  
     "options": {
       "caption": "Товары дня",
-      "showSize": true,
-      "background": {
-        "color": "white"
-      },
-      "date": {
-        "start": "2020-12-21",
-        "end": "2020-12-31"
-      }
-    },
+      "scroll": "horizontal"      
+    },  
     "blocks": [
       {
-        "type": "shelf",
-        "query": "getShelf(goodOfDay1)",
-        "id": "goodOfDay1",
+        "type": "goodOfDay",
+        "query": "shelf",
+        "id": "Предложение дня",
         "options": {
-          "buttons": {
-            "cart": true
-          },
           "background": {
-            "color": "white"
+            "color": "4AC4D7"
+          },          
+          "productCardOptions": {
+              "cardBackground": {
+                  "color": "white"
+              },  
+              "displayActionsLabel": false,
+              "displayDiscountLabel": true,
+              "displayOldPrice": true,
+              "displayCartButton": true,
+              "displayFavoriteIcon": false,
+              "displayCampareIcon": false,
+              "displayCreditInfo": false,
+              "displayProductStatus": true,
+              "displayRating": true
           }
         }
       }
@@ -123,17 +133,18 @@
     "containerType": "shelf",
     "options": {
       "caption": "Хиты продаж",
-      "scroll": "horizontal",
-      "background": {
-        "color": "white"
-      }
+      "scroll": "horizontal"      
     },
     "blocks": [
       {
         "type": "shelf",
         "query": "shelf",
         "id": "Хиты продаж",
-        "options": {          
+        "options": {
+          "background": {
+            "color": "white"
+          },
+          "productCount": 10,          
           "productCardOptions": {
               "cardBackground": {
                   "color": "grey"
@@ -155,26 +166,49 @@
   {
     "containerId": "banners_1",
     "containerType": "banners",
+    "options": {      
+      "scroll": "horizontal",
+      "background": {
+        "color": "white"
+      }
+    },
     "blocks": [
       {
         "type": "banners",
-        "query": "getBanners",
-        "id": "banners1"
+        "query": "banners",
+        "id": "banners1"        
       }
     ]
   },
   {
     "containerId": "shelfGroup_1",
     "containerType": "shelfGroup",
+    "options": {      
+      "scroll": "horizontal"
+    },
     "blocks": [
       {
         "type": "shelfGroup",
-        "query": "getShelfGroup",
+        "query": "shelf",
         "id": "shelfGroup1",
-        "options": {
-          "underline": "Смотреть все",
+        "options": {        
           "background": {
-            "color": "grey"
+            "color": "white"
+          },
+          "productCount": 3,
+          "productCardOptions": {
+              "cardBackground": {
+                  "color": "grey"
+              },  
+              "displayActionsLabel": false,
+              "displayDiscountLabel": true,
+              "displayOldPrice": true,
+              "displayCartButton": false,
+              "displayFavoriteIcon": false,
+              "displayCampareIcon": false,
+              "displayCreditInfo": false,
+              "displayProductStatus": true,
+              "displayRating": false
           }
         }
       }
@@ -182,21 +216,24 @@
   },
   {
     "containerId": "reviews_1",
-    "containerType": "review",
+    "containerType": "reviews",
     "options": {
       "caption": "Mag",
-      "icon": "path/to/icon",
-      "button": {
-        "title": "Все новости и обзоры",
-        "background": "grey",
-        "url": "/action/click"
-      }
+      "localImage": "smallLogo",
+      "scroll": "horizontal"
     },
     "blocks": [
       {
-        "type": "review",
-        "query": "getReviews",
-        "id": "review1"
+        "type": "reviews",
+        "query": "reviews",
+        "id": "reviews1",
+        "options": {
+          "button": {
+            "buttonStyle": "secondary",
+            "caption": "Все новости и обзоры",
+            "link": "reviewList"            
+          }
+        }
       }
     ]
   },
@@ -205,32 +242,58 @@
     "containerType": "alreadyViewed",
     "options": {
       "caption": "Вы смотрели",
-      "icon": "path/to/icon"
-    },
+      "scroll": "horizontal"      
+    },    
     "blocks": [
       {
         "type": "alreadyViewed",
-        "query": "alreadyViewed",
-        "id": "alreadyViewed1"
+        "query": null,
+        "id": "alreadyViewed1",
+        "options": {                    
+          "background": {
+            "color": "white"
+          },
+          "productCount": 10,
+          "productCardOptions": {
+            "cardBackground": {
+                "color": "grey"
+            },  
+            "displayActionsLabel": false,
+            "displayDiscountLabel": true,
+            "displayOldPrice": true,
+            "displayCartButton": false,
+            "displayFavoriteIcon": false,
+            "displayCampareIcon": false,
+            "displayCreditInfo": false,
+            "displayProductStatus": true,
+            "displayRating": false
+          }       
+        }
       }
     ]
   },
   {
     "containerId": "notFound_1",
     "containerType": "notFound",
-    "options": {
-      "caption": "Не заинтересовало?",
-      "text": "Возможно вы найдете что-то среди наших акций",
-      "button": {
-        "title": "Все акции",
-        "background": "red",
-        "url": "/action/click"
-      }
-    },
-    "blocks":[{
-      "type": "notFoundTypePlaceholder",
-      "query": "notFoundQueryPlaceholder",
-      "id": "notFoundIdPlaceholder"
-    }]
+    "blocks":[
+      {
+        "type": "notFound",
+        "query": null,
+        "id": "notFound",
+        "options": {
+          "caption": "Не заинтересовало?",
+          "text": "Возможно вы найдете что-то среди наших акций!",
+          "background": {
+            "color": "grey"
+          }, 
+          "buttons":[ {
+            "style":"primary",
+            "caption": "Все акции",            
+            "link": "promoList"
+            }
+          ]      
+        }      
+    }  
+  ]
   }
 ]
