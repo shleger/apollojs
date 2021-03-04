@@ -95,7 +95,7 @@
           "buttons": [
               {
                 "style": "secondary",
-                "caption": "Все акции",        
+                "title": "Все акции",        
                 "link": "promoList"
               }
           ]      
@@ -107,7 +107,7 @@
     "containerId": "goodOfDay_1",
     "containerType": "goodOfDay",  
     "options": {
-      "caption": "Товары дня",
+      "title": "Товары дня",
       "scroll": "horizontal"      
     },  
     "blocks": [
@@ -141,7 +141,7 @@
     "containerId": "shelf1",
     "containerType": "shelf",
     "options": {
-      "caption": "Хиты продаж",
+      "title": "Хиты продаж",
       "scroll": "horizontal"      
     },
     "blocks": [
@@ -227,7 +227,7 @@
     "containerId": "reviews_1",
     "containerType": "reviews",
     "options": {
-      "caption": "Mag",
+      "title": "Mag",
       "localImage": "smallLogo",
       "scroll": "horizontal"
     },
@@ -239,7 +239,7 @@
         "options": {
           "button": {
             "buttonStyle": "secondary",
-            "caption": "Все новости и обзоры",
+            "title": "Все новости и обзоры",
             "link": "reviewList"            
           }
         }
@@ -250,7 +250,7 @@
     "containerId": "alreadyViewed_1",
     "containerType": "alreadyViewed",
     "options": {
-      "caption": "Вы смотрели",
+      "title": "Вы смотрели",
       "scroll": "horizontal"      
     },    
     "blocks": [
@@ -290,14 +290,14 @@
         "query": null,
         "id": "notFound",
         "options": {
-          "caption": "Не заинтересовало?",
+          "title": "Не заинтересовало?",
           "text": "Возможно вы найдете что-то среди наших акций!",
           "background": {
             "color": "grey"
           }, 
           "buttons":[ {
             "style":"primary",
-            "caption": "Все акции",            
+            "title": "Все акции",            
             "link": "promoList"
             }
           ]      
@@ -313,14 +313,14 @@
         "type": "mMag",
         "id": "mMag_b1",
         "options": {
-          "caption": "Все новости и обзоры",
+          "title": "Все новости и обзоры",
           "text": "Возможно вы найдете что-то среди наших новостей!",
           "background": {
             "color": "grey"
           }, 
           "buttons":[ {
             "style":"primary",
-            "caption": "Все акции",            
+            "title": "Все акции",            
             "link": "promoList",
             "url":"http://mvideo.ru"
             }

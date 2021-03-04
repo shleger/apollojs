@@ -1,10 +1,10 @@
 [
     {    
         "shelfOptions": {
-            "caption": "Хиты продаж",
+            "title": "Хиты продаж",
             "buttons": [
                 {                 
-                  "caption": "Смотреть все",        
+                  "title": "Смотреть все",        
                   "link": "shelfDetail"
                 }
             ]            
@@ -55,10 +55,10 @@
     },
     {
         "shelfOptions": {
-            "caption": "В тренде",
+            "title": "В тренде",
             "buttons": [
                 {                  
-                  "caption": "К товару",        
+                  "title": "К товару",        
                   "link": "productDetail"
                 }
             ]            

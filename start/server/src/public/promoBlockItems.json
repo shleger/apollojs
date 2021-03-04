@@ -2,7 +2,7 @@
 {
     "promoUuid": "cab33c63-885e-4191-a0c2-a8403339da5f",
     "promoId": "IR100000851",
-    "caption": "Скидка до 10 000 р. по промокоду",
+    "title": "Скидка до 10 000 р. по промокоду",
     "imageUrl": "https://static.mvideo.ru/icerock/target_campaign/PP_mobbap_1602_void.png",
     "dateStart": "2021-01-20",
     "dateEnd": "2021-02-01",
@@ -12,7 +12,7 @@
 {
     "promoUuid": "9b3cb9ba-f47f-4c77-a11f-172dd98ced39",
     "promoId": "IR100000852",
-    "caption": "Морозная распродажа: скидки до 30% и горячий кэшбэк",
+    "title": "Морозная распродажа: скидки до 30% и горячий кэшбэк",
     "imageUrl": "https://static.mvideo.ru/icerock/mobile_media/2020/December/moroznaya-rasprodazha.png",
     "dateStart": "2021-01-12",
     "dateEnd": "2021-02-08",               
@@ -22,7 +22,7 @@
 {
     "promoUuid": "1ea278a5-1db7-4aa8-91b3-10d8a6ff0594",
     "promoId": "IR100000854",
-    "caption": "Кибердни",
+    "title": "Кибердни",
     "imageUrl": "https://static.mvideo.ru/icerock/mobile_media/2021/January/kiberdni_wide_S_960x624.png",
     "dateStart": "2021-01-22",
     "dateEnd": "2021-02-01",               

@@ -40,7 +40,7 @@ const resolvers = {
         personalMapItem: () => ({
             "type": "authMap",
             "id": "AuthMap",
-            "caption": "Магазины М.Видео",
+            "title": "Магазины М.Видео",
             "imageUrl": "map.png",
             "link": "map"     
         }),

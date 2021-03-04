@@ -6,7 +6,7 @@ const mocks = {
   PromoBlockItem: () => ([{
     type: "ssss",
     id: "uid",
-    caption: "cap",
+    title: "cap",
     order: 1,
     scrollType: "noScroll",
     __typename: "CoreBlock"

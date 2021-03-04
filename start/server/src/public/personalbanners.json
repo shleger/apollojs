@@ -2,49 +2,49 @@
 	{
         "type": "signIn",
         "id": "signIn",
-        "caption": "Войти",		
+        "title": "Войти",		
 		"localImage": "user",
         "link": "auth"         
     },
     {
         "type": "noAuthBanner",
         "id": "banner1",
-        "caption": "Здесь будут данные о ваших заказах",		
+        "title": "Здесь будут данные о ваших заказах",		
 		"localImage": "box",
         "link": "auth"         
     },
     {
         "type": "noAuthBanner",
         "id": "banner2",
-        "caption": "Забирайте товары прямо из магазина",
+        "title": "Забирайте товары прямо из магазина",
         "localImage": "box",
         "link": "auth"
     },
     {
         "type": "noAuthBanner",
         "id": "banner3",
-        "caption": "Персональные предложения",
+        "title": "Персональные предложения",
         "localImage": "box",
         "link": "auth"
     },
     {
         "type": "noAuthBanner",
         "id": "banner4",
-        "caption": "Оплачивайте кредит в приложении",
+        "title": "Оплачивайте кредит в приложении",
         "localImage": "box",
         "link": "auth"
     },
     {
         "type": "noAuthBanner",
         "id": "banner5",
-        "caption": "Специальные промокоды для вас",
+        "title": "Специальные промокоды для вас",
         "localImage": "box",
         "link": "auth"
     },
     {
         "type": "rateApp",
         "id": "rateApp",
-        "caption": "Оцените приложение",
+        "title": "Оцените приложение",
         "localImage": "star",
         "link": "rateApp"
     }    

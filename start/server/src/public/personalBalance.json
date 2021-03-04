@@ -2,7 +2,7 @@
 	{
             "type": "personalBalance",
             "id": "balanceVariant1",
-            "caption": "1998 Бонусных рублей",                   
+            "title": "1998 Бонусных рублей",                   
             "text": "Успейте потратить 100 Бонусных рублей до 31.01.2021",
             "imageUrl": "clock.png",
             "link": "profile",
@@ -11,7 +11,7 @@
         {
             "type": "personalBalance",
             "id": "balanceVariant2",
-            "caption": "Нет Бонусных рублей",                   
+            "title": "Нет Бонусных рублей",                   
             "text": "Скоро будут доступны 100 Бонусных рублей",
             "imageUrl": "star.png",
             "link": "balance",
@@ -20,7 +20,7 @@
         {
             "type": "personalBalance",
             "id": "balanceVariant3",
-            "caption": "1998 Бонусных рублей",                   
+            "title": "1998 Бонусных рублей",                   
             "text": "Дозаполните профиль, чтобы получать больше Бонусных рублей и персональные предложения",
             "imageUrl": "pen.png",
             "link": "profile",
@@ -29,7 +29,7 @@
         {
             "type": "personalBalance",
             "id": "balanceVariant4",
-            "caption": "1998 Бонусных рублей",                   
+            "title": "1998 Бонусных рублей",                   
             "text": "Не забудьте использовать Бонусные рубли при оплате следующей покупки!",
             "imageUrl": "smile.png",
             "link": "balance",
@@ -38,7 +38,7 @@
         {
             "type": "personalBalance",
             "id": "balanceVariant5",
-            "caption": "Нет Бонусных рублей",                   
+            "title": "Нет Бонусных рублей",                   
             "text": "Покупайте товары в М.Видео, получайте Бонусные рубли и оплачивайте ими до 50% стоимости покупки!",
             "imageUrl": "like.png",
             "link": "loyalty",

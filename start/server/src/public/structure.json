@@ -11,7 +11,7 @@
     "blocks": [
       {
         "type": "personalTitle",
-        "query": "getPersonalCaption",
+        "query": "getPersonaltitle",
         "id": "personalTitle1"
       },
       {
@@ -140,7 +140,7 @@
     "containerId": "goodOfDay_1",
     "containerType": "goodOfDay",
     "options": {
-      "caption": "Товары дня",
+      "title": "Товары дня",
       "showSize": true,
       "background": {
         "color": "white"
@@ -170,7 +170,7 @@
     "containerId": "hits1",
     "containerType": "hits",
     "options": {
-      "caption": "Хиты продаж",
+      "title": "Хиты продаж",
       "background": {
         "color": "turquoise"
       }
@@ -223,7 +223,7 @@
     "containerId": "reviews_1",
     "containerType": "review",
     "options": {
-      "caption": "Mag",
+      "title": "Mag",
       "icon": "path/to/icon",
       "button": {
         "title": "Все новости и обзоры",
@@ -243,7 +243,7 @@
     "containerId": "alreadyViewed_1",
     "containerType": "alreadyViewed",
     "options": {
-      "caption": "Вы смотрели",
+      "title": "Вы смотрели",
       "icon": "path/to/icon"
     },
     "blocks": [
@@ -258,7 +258,7 @@
     "containerId": "notFound_1",
     "containerType": "notFound",
     "options": {
-      "caption": "Не заинтересовало?",
+      "title": "Не заинтересовало?",
       "text": "Возможно вы найдете что-то среди наших акций",
       "button": {
         "title": "Все акции",

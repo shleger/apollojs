@@ -14,7 +14,7 @@
 }
 
 fragment optionsFragment on ContainerOptions {
-  caption
+  title
   background {
     color
   }
@@ -38,24 +38,24 @@ fragment blockOptionsFragment on BlockOptions {
     blockSize
     buttons {
       style
-      caption
+      title
       link
     }
   }
   ... on NotFoundBlockOptions {
-    caption
+    title
     text
     background {
       color
     }
     buttons {
       style
-      caption
+      title
       link
     }
   }
   ... on ShelfBlockOptions {
-    caption
+    title
     productCardOptions {
       cardBackground {
         color

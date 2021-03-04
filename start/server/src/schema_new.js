@@ -63,7 +63,7 @@ type PersonalMapItem{
 type PersonalPromoItem{
   type: BlockType!
   id: String!
-  caption: String!
+  title: String!
   text: String
   icon: String! # либо идентификатор локального ресурса либо  URL
   link: AppLink!
@@ -124,7 +124,7 @@ type Container {
 }
 
 type ContainerOptions {
-  caption: String
+  title: String
   background: Background
   blockOptions: BlockOptions
 }
@@ -171,7 +171,7 @@ type Background {
 
 type  Button{
   style: ButtonStyle
-  caption: String
+  title: String
   iconUrl: String
   link: AppLink 
   url: String
@@ -184,7 +184,7 @@ type PromoBlockResponse {
 type PromoItem {
   promoUuid: String!
   promoId: String
-  caption: String
+  title: String
   imageURL: String      		
   dateStart: String
   dateEnd: String
@@ -199,7 +199,7 @@ type ShelfItem {
 }
 
 type ShelfBlockOptions {
-  caption: String #заголовок подборки
+  title: String #заголовок подборки
   buttons: [Button] #настройки кнопки "Смотреть все" - заполняются для подборки с переключателями
   period: Period #срок действия подборки, заполняется для товаров дня
   background: Background #фон блока с подборкой
@@ -236,14 +236,14 @@ type ProductStateInfo {
   color: String
 }
 type NotFoundBlockOptions {
-  caption: String
+  title: String
   text: String
   background: Background
   buttons: [Button]
 }
 
 type MMagBlockOptions {
-  caption: String
+  title: String
   text: String
   url: String
   background: Background
@@ -256,7 +256,7 @@ type MMagBlockOptions {
 #   blockSize: BlockSize #используется в промоблоке для указание размера элемента в карусели 
 #   buttons: [Button] #описание кнопок в блоке - используется в промо-блоке и блоке "Не нашли"
 
-#   caption: String #заголовок - используется в подборках и блоке "Не нашли"
+#   title: String #заголовок - используется в подборках и блоке "Не нашли"
 #   text: String #подзаголовок - используется в блоке "Не нашли"
 #   period: Period #срок действия подборки, заполняется для товаров дня
 #   background: Background #фон блока с подборкой  - используется в подборках и блоке "Не нашли"

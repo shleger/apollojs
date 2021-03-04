@@ -2,7 +2,7 @@
 	"personalOrder0": [
 		{
 			"type": "personalOrder",
-			"caption": "Готов к выдаче",
+			"title": "Готов к выдаче",
 			"text": "Самовывоз до 28 февраля",
 			"imageUrl": "ok.png",                  
 			"orderCount": 1,
@@ -10,7 +10,7 @@
 			"endReserveDate": "2021-02-28T23:59:59",
 			"uberPickup": false,
 			"button": {
-				"caption": "К заказу", 
+				"title": "К заказу", 
 				"link": "orderDetail"
 			}
         } 
@@ -18,7 +18,7 @@
 	"personalOrder1": [
 		{
                 "type": "personalOrder",               
-                "caption": "Готов к выдаче",
+                "title": "Готов к выдаче",
                 "text": "Самовывоз до 28 февраля",
                 "imageUrl": "ok.png",                  
                 "orderCount": 1,
@@ -26,7 +26,7 @@
                 "endReserveDate": "2021-02-28T23:59:59",
                 "uberPickup": true,
                 "button": {
-                    "caption": "Забрать заказ",
+                    "title": "Забрать заказ",
                     "link": "orderDetail"
                 }
         }              
@@ -34,7 +34,7 @@
 	"personalOrder2": [
 		{
                 "type": "personalOrder",               
-                "caption": "Готов к выдаче",
+                "title": "Готов к выдаче",
                 "text": "Самовывоз до 28 февраля",
                 "imageUrl": "ok.png",                  
                 "orderCount": 1,
@@ -42,13 +42,13 @@
                 "endReserveDate": "2021-02-28T23:59:59",
                 "uberPickup": true,
                 "button": {
-                    "caption": "Забрать заказ",
+                    "title": "Забрать заказ",
                     "link": "orderDetail"
                 }
         },
         {
 			"type": "personalOrder",
-			"caption": "Готов к выдаче",
+			"title": "Готов к выдаче",
 			"text": "Самовывоз до 28 февраля",
 			"imageUrl": "ok.png",                  
 			"orderCount": 1,
@@ -56,7 +56,7 @@
 			"endReserveDate": "2021-02-28T23:59:59",
 			"uberPickup": false,
 			"button": {
-				"caption": "К заказу", 
+				"title": "К заказу", 
 				"link": "orderDetail"
 			}
         }       
@@ -64,7 +64,7 @@
 	"personalOrder3": [
 		{
 			"type": "personalOrder",               
-			"caption": "Готовы к выдаче",
+			"title": "Готовы к выдаче",
 			"text": "Заказов к выдаче: 3 \nПроверьте адреса магазинов для получения",
 			"imageUrl": "ok.png",                  
 			"orderCount": 3,
@@ -72,7 +72,7 @@
 			"endReserveDate": null,
 			"uberPickup": null,
 			"button": {				
-				"caption": "К заказам",
+				"title": "К заказам",
 				"link": "orderList"
 			}
 		} 
