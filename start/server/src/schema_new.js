@@ -210,15 +210,15 @@ type Period {
 
 type ProductCardOptions   {  
   cardBackground: Background  
-  displayActionsLabel: Boolean
-  displayDiscountLabel: Boolean
-  displayOldPrice: Boolean
-  displayCartButton: Boolean
-  displayFavoriteIcon: Boolean
-  displayCampareIcon: Boolean
-  displayCreditInfo: Boolean
-  displayProductStatus: Boolean
-  displayRating: Boolean
+  isActionsLabelDisplayed: Boolean!
+  isDiscountLabelDisplayed: Boolean!
+  isOldPriceDisplayed: Boolean!
+  isCartButtonDisplayed: Boolean!
+  isFavoriteIconDisplayed: Boolean!
+  isCompareIconDisplayed: Boolean!
+  isCreditInfoDisplayed: Boolean!
+  isProductStatusDisplayed: Boolean!
+  isRatingDisplayed: Boolean!
 }
 
 

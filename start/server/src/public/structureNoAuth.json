@@ -123,15 +123,15 @@
               "cardBackground": {
                   "color": "white"
               },  
-              "displayActionsLabel": false,
-              "displayDiscountLabel": true,
-              "displayOldPrice": true,
-              "displayCartButton": true,
-              "displayFavoriteIcon": false,
-              "displayCampareIcon": false,
-              "displayCreditInfo": false,
-              "displayProductStatus": true,
-              "displayRating": true
+              "isActionsLabelDisplayed": false,
+              "isDiscountLabelDisplayed": true,
+              "isOldPriceDisplayed": true,
+              "isCartButtonDisplayed": true,
+              "isFavoriteIconDisplayed": false,
+              "isCompareIconDisplayed": false,
+              "isCreditInfoDisplayed": false,
+              "isProductStatusDisplayed": true,
+              "isRatingDisplayed": true
           }
         }
       }
@@ -158,15 +158,15 @@
               "cardBackground": {
                   "color": "grey"
               },  
-              "displayActionsLabel": false,
-              "displayDiscountLabel": true,
-              "displayOldPrice": true,
-              "displayCartButton": false,
-              "displayFavoriteIcon": false,
-              "displayCampareIcon": false,
-              "displayCreditInfo": false,
-              "displayProductStatus": true,
-              "displayRating": true
+              "isActionsLabelDisplayed": false,
+              "isDiscountLabelDisplayed": true,
+              "isOldPriceDisplayed": true,
+              "isCartButtonDisplayed": false,
+              "isFavoriteIconDisplayed": false,
+              "isCompareIconDisplayed": false,
+              "isCreditInfoDisplayed": false,
+              "isProductStatusDisplayed": true,
+              "isRatingDisplayed": true
           }
         }
       }
@@ -209,15 +209,15 @@
               "cardBackground": {
                   "color": "grey"
               },  
-              "displayActionsLabel": false,
-              "displayDiscountLabel": true,
-              "displayOldPrice": true,
-              "displayCartButton": false,
-              "displayFavoriteIcon": false,
-              "displayCampareIcon": false,
-              "displayCreditInfo": false,
-              "displayProductStatus": true,
-              "displayRating": false
+              "isActionsLabelDisplayed": false,
+              "isDiscountLabelDisplayed": true,
+              "isOldPriceDisplayed": true,
+              "isCartButtonDisplayed": false,
+              "isFavoriteIconDisplayed": false,
+              "isCompareIconDisplayed": false,
+              "isCreditInfoDisplayed": false,
+              "isProductStatusDisplayed": true,
+              "isRatingDisplayed": false
           }
         }
       }
@@ -267,15 +267,15 @@
             "cardBackground": {
                 "color": "grey"
             },  
-            "displayActionsLabel": false,
-            "displayDiscountLabel": true,
-            "displayOldPrice": true,
-            "displayCartButton": false,
-            "displayFavoriteIcon": false,
-            "displayCampareIcon": false,
-            "displayCreditInfo": false,
-            "displayProductStatus": true,
-            "displayRating": false
+            "isActionsLabelDisplayed": false,
+            "isDiscountLabelDisplayed": true,
+            "isOldPriceDisplayed": true,
+            "isCartButtonDisplayed": false,
+            "isFavoriteIconDisplayed": false,
+            "isCompareIconDisplayed": false,
+            "isCreditInfoDisplayed": false,
+            "isProductStatusDisplayed": true,
+            "isRatingDisplayed": false
           }       
         }
       }

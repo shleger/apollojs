@@ -61,15 +61,15 @@ fragment blockOptionsFragment on BlockOptions {
               cardBackground {
 								color
 							}
-							displayActionsLabel
-							displayDiscountLabel
-							displayOldPrice
-							displayCartButton
-							displayFavoriteIcon
-							displayCampareIcon
-							displayCreditInfo
-							displayProductStatus
-            	displayRating
+							isActionsLabelDisplayed
+							isDiscountLabelDisplayed
+							isOldPriceDisplayed
+							isCartButtonDisplayed
+							isFavoriteIconDisplayed
+							isCompareIconDisplayed
+							isCreditInfoDisplayed
+							isProductStatusDisplayed
+            	isRatingDisplayed
             }
           }
 }

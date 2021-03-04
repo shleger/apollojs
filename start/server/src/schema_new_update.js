@@ -138,6 +138,8 @@ type ProductCardOptions {
   isCompareIconDisplayed: Boolean! 
   isProductStatusDisplayed: Boolean!
   isRatingDisplayed: Boolean!
+
+  displayCreditInfo: Boolean! # forgot?
 }
 
 
