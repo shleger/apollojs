@@ -12,45 +12,93 @@ type Query {
   structure : MainPageStructure
   structureAuth : MainPageStructure
   structureNoAuth : MainPageStructure
-  #getStructure (apiRequestHeader: ApiRequestHeader): MainPageStructure
-  #banners (blockId: String): PromoBlock
-  shelf (id: ID!, type: String, productCount: Int, getAll:Boolean): ShelfResponse  
-  getPersonalBanners: PersonalBlockResponse
-  personalBanner (id: ID!): PersonalBlockWidget
-  
-  
-  personalBalance0: PersonalBlockBalanceWidget
-  personalBalance1: PersonalBlockBalanceWidget
-  personalBalance2: PersonalBlockBalanceWidget
-  personalBalance3: PersonalBlockBalanceWidget
-  personalBalance4: PersonalBlockBalanceWidget
-   
-  
-  personalOrder0: PersonalBlockOrderResponse
-  personalOrder1: PersonalBlockOrderResponse
-  personalOrder2: PersonalBlockOrderResponse
-  personalOrder3: PersonalBlockOrderResponse
 
-  
-  personalPromo: PersonalBlockPromoResponse
-  
-  personalMapAuth: PersonalBlockWidget
-  personalMapNoAuth: PersonalBlockWidget
+  personalNoAuthItem (id: ID!): PersonalNoAuthItem
+  personalBalanceItem: PersonalBalanceItem
+  personalOrderItems: [PersonalOrderItem] 
+  personalPromoItems: [PersonalPromoItem]
+  personalMapItem: PersonalMapItem
 
-  promoBlock(id: ID!): PromoBlockResponse
+  promoItems(id: ID!): [PromoItem]
+
+  shelfItems (id: ID!, type: String, itemsCount: Int, getAll:Boolean): [ShelfItem]
+
+
+  notFoundItem: NotFoundItem
+
+  mMagItems: [MMagItem]
+
+
 }
 
-#type Mutation {
-#TODO insert mutation queries
-#}
+type MMagItem{
+  type: BlockType!
+  id: String!
+  title: String
+  targetURL: String
+  mMagType: Int
+  imageURL: String
 
-#input ApiRequestHeader {
-#  uniqueInstallationId: String!
-#  location: String!
-#  sessionId: String
-#  os: String!
-#  app_version: String!
-# }
+}
+type NotFoundItem {
+  type: BlockType!
+  id: String!
+  title: String
+  text: String
+  background: Background
+  buttons: [Button]
+}
+type PersonalMapItem{
+  type: BlockType!
+  id: String!
+  title: String!
+  #text: String
+  icon: String # либо идентификатор локального ресурса либо  URL
+  link: AppLink
+  shopIds: [Int]
+}
+type PersonalPromoItem{
+  type: BlockType!
+  id: String!
+  caption: String!
+  text: String
+  icon: String! # либо идентификатор локального ресурса либо  URL
+  link: AppLink!
+  campaignId: String
+  beginDate: String
+  endDate: String
+  showTimer: Boolean
+}
+type PersonalOrderItem{
+  type: BlockType!
+  id: String!
+  title: String!
+  text: String
+  icon: String# либо идентификатор локального ресурса либо  URL
+  link: AppLink
+  orderCount: Int!
+  orderId: String
+  endReserveDate: String
+  uberPickup: Boolean
+  button: Button
+}
+type PersonalBalanceItem {
+  type: BlockType!
+  id: String!
+  title: String!
+  text: String
+  icon: String# либо идентификатор локального ресурса либо  URL
+  link: AppLink
+  balance: Int!
+}
+type PersonalNoAuthItem{
+  type: BlockType!
+  id: String!
+  title: String!
+  text: String
+  icon: String# либо идентификатор локального ресурса либо  URL
+  link: AppLink
+}
 
 type MainPageStructure {
   version: String
@@ -87,25 +135,17 @@ enum ContainerType {
 
 type ContainerOptions {
   caption: String
-  scroll:ScrollType 
   background: Background
   blockOptions: BlockOptions
-  localImage: LocalImage
 }
 
 type Block {
-  type: BlockType!
-  auth: Boolean
-  query: String
+  type: BlockType!  
   id: ID!
   options: BlockOptions
 }
 
-enum ScrollType {
-  noScroll
-  horizontal
-  vertical
-}
+
 
 enum BlockType {
   appHeader
@@ -113,7 +153,7 @@ enum BlockType {
   noAuthBanner #персблок неавторизованного пользователя - баннер
   noAuthMap #персблок неавторизованного пользователя - карта
   authMap #персблок авторизованного пользователя - карта
-  personalCaption #приветствие в авторизованном блоке например "Константин, добрый день"
+  personalTitle #приветствие в авторизованном блоке например "Константин, добрый день"
   personalBalance #персблок авторизованного пользователя - виджет лояльности
   personalOrder #персблок авторизованного пользователя - виджет с активным заказом
   personalPromo #персблок авторизованного пользователя - виджет с перс.предложением
@@ -135,7 +175,6 @@ enum BlockSize {
   large
 }
 
-#union BlockOptions = PersonalBlockOptions | PromoBlockOptions | ShelfBlockOptions | ProductCardOptions
 union BlockOptions = PersonalBlockOptions | PromoBlockOptions | ShelfBlockOptions | NotFoundBlockOptions
 
 type BlockOptions2 {
@@ -153,27 +192,6 @@ type BlockOptions2 {
 
 
 
-
-enum LocalImage {
-  box #иконка с коробкой на неавторизованном баннере
-  cart #иконка с корзиной
-  favorite #иконка добавления в избранное на товаре
-  compare #иконка добавления к сравнению на товаре
-  user #иконка юзера на кнопке Войти и в авторизованном пользователе
-  star # подложка для виджета с балансом со звездой
-  smile  #подложка для виджета с балансом со смайлом
-  like #подложка для виджета с балансом с пальцем
-  pen #подложка для виджета с балансом с ручкой
-  clock #подложка для виджета с балансом с часами
-  logo #логотип в хедере
-  map #изображение для виджета с картой магазинов
-  mapPoint
-  message #для хедера иконка перехода в чат
-  geo #для хедера иконка перехода на карту
-  favoritePromo #иконка добавления в избранное на промо
-  favoriteClose #иконка закрытия на промо
-  smallLogo #иконка с буквой М - например в заголовке блока ММаг или обозначающая магазин на карте
-}
 
 type PersonalBlockOptions {  
   buttonStyle: ButtonStyle  
@@ -224,7 +242,6 @@ enum ButtonStyle {
 type  Button{
   style: ButtonStyle
   caption: String
-  localImage: LocalImage
   link: AppLink
   visible: Boolean
   enabled: Boolean
@@ -247,11 +264,9 @@ type PromoItem {
   promoURL: String
 }
 
-type ShelfResponse {
-  items : [ShelfBlock]
-}
 
-type ShelfBlock { 
+
+type ShelfItem { 
   shelfOptions: ShelfBlockOptions
   totalProductCount: Int
   products: [Product]
@@ -324,10 +339,10 @@ type PersonalBlockWidget {
   caption: String!
   text: String
   imageUrl: String
-  localImage: LocalImage
   link: AppLink
 }
 
+#depricated
 type PersonalBlockBalanceWidget  {
   type: BlockType!  
   id: String!
@@ -338,7 +353,8 @@ type PersonalBlockBalanceWidget  {
   balance: Int!
 }
 
-type PersonalBlockPromoWidget  {
+#depricated
+type  PersonalBlockPromoWidget{
   type: BlockType! 
   id: String! 
   caption: String!

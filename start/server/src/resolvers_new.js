@@ -33,30 +33,29 @@ const resolvers = {
         },
     },
     Query: {
-        personalPromo: () => ({
+        personalPromoItems: () => ({
             items: persPromo
         }),
-        personalMapAuth: () => ({
+        personalMapItem: () => ({
             "type": "authMap",
             "id": "AuthMap",
             "caption": "Магазины М.Видео",
             "imageUrl": "map.png",
             "link": "map"     
         }),
-        personalMapNoAuth: () => (
-            {
-                "type": "noAuthMap",
-                "id": "noAuthMap",
-                "caption": "Магазины на карте",
-                "imageUrl": "map.png",
-                "link": "map"  
-            }
-        ),
-        getPersonalBanners: () => ({
-            items: persBanners
+        mMagItems: () => (
+             [{
+                "title": "Умная одежда: новый тренд",
+                "targetURL": "/obzor-umnoj-odezhdy-chto-kupit",
+                "mMagType": "100005",   
+                "imageURL": "http://mvideo.ru"
+            }]
+         ),
+        // getPersonalBanners: () => ({
+        //     items: persBanners
 
-        }),
-        personalBanner(parent, args, context, info)  {
+        // }),
+        personalNoAuthItem(parent, args, context, info)  {
             //let result = persBanners.find(item => item.id === args.id)
             return persBanners.find(item => item.id === args.id)
             //return {items: persBanners}
@@ -64,34 +63,6 @@ const resolvers = {
         },        
 
                 
-        personalBalance0:  () => (           
-            persBalance[0]
-        ),
-        personalBalance1:  () => (           
-            persBalance[1]
-        ),
-        personalBalance2:  () => (           
-            persBalance[2]
-        ),
-        personalBalance3:  () => (           
-            persBalance[3]
-        ),
-        personalBalance4:  () => (           
-            persBalance[4]
-        ),
-
-        personalOrder0:  () => ({           
-            items: persOrder.personalOrder0
-        }),
-        personalOrder1:  () => ({
-            items: persOrder.personalOrder1
-        }),
-        personalOrder2:  () => ({
-            items: persOrder.personalOrder2
-        }),
-        personalOrder3:  () => ({
-            items: persOrder.personalOrder3
-        }),
         
         structure: () => ({
             version: "1.0.0",
@@ -111,16 +82,12 @@ const resolvers = {
 
         }),
         
-        promoBlock (parent, args, context, info) {
-            let result = {items: promoBlockItems}
-            return result;
-
-        },
         
-        shelf (parent, args, context, info) {            
+        shelfItems (parent, args, context, info) {            
             //return {items: shelfBlock}
             return {items: shelfGroup}
         } 
+
         
         
     }
