@@ -136,9 +136,9 @@ enum BlockSize {
 }
 
 #union BlockOptions = PersonalBlockOptions | PromoBlockOptions | ShelfBlockOptions | ProductCardOptions
-#union BlockOptions = PersonalBlockOptions | PromoBlockOptions | ShelfBlockOptions | NotFoundBlockOptions
+union BlockOptions = PersonalBlockOptions | PromoBlockOptions | ShelfBlockOptions | NotFoundBlockOptions
 
-type BlockOptions {
+type BlockOptions2 {
   buttonStyle: ButtonStyle #используется в персблоке для указание стиля кнопок в виджете убер-пикапа
   blockSize: BlockSize #используется в промоблоке для указание размера элемента в карусели 
   buttons: [Button] #описание кнопок в блоке - используется в промо-блоке и блоке "Не нашли"
@@ -149,7 +149,7 @@ type BlockOptions {
   background: Background #фон блока с подборкой  - используется в подборках и блоке "Не нашли"
   productsCount: Int #количество элементов, выводимых в подборке на главной / количество видимых элементов в блоке с переключателями  
   productCardOptions: ProductCardOptions #настройки карточки товара в подборке
-}
+ }
 
 
 

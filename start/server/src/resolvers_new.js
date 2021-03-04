@@ -14,7 +14,24 @@ let shelfGroup = require('./public/shelfGroup.json');
 let persPromo = require('./public/personalPromo.json');
 
 const resolvers = {
-    
+    BlockOptions: {
+        __resolveType(obj, context, info){
+          if(obj.buttonStyle){
+            return 'PersonalBlockOptions';
+          }
+          if(obj.blockSize){
+            return 'PromoBlockOptions';
+          }
+          if(obj.productCardOptions){
+            return 'ShelfBlockOptions';
+          }
+          if(obj.text){
+            return 'NotFoundBlockOptions';
+          }
+          
+          return 'NotFoundBlockOptions'; // GraphQLError is thrown
+        },
+    },
     Query: {
         personalPromo: () => ({
             items: persPromo
