@@ -175,18 +175,18 @@ enum BlockSize {
 
 union BlockOptions = PersonalBlockOptions | PromoBlockOptions | ShelfBlockOptions | NotFoundBlockOptions
 
-type BlockOptions2 {
-  buttonStyle: ButtonStyle #используется в персблоке для указание стиля кнопок в виджете убер-пикапа
-  blockSize: BlockSize #используется в промоблоке для указание размера элемента в карусели 
-  buttons: [Button] #описание кнопок в блоке - используется в промо-блоке и блоке "Не нашли"
+# type BlockOptions2 {
+#   buttonStyle: ButtonStyle #используется в персблоке для указание стиля кнопок в виджете убер-пикапа
+#   blockSize: BlockSize #используется в промоблоке для указание размера элемента в карусели 
+#   buttons: [Button] #описание кнопок в блоке - используется в промо-блоке и блоке "Не нашли"
 
-  caption: String #заголовок - используется в подборках и блоке "Не нашли"
-  text: String #подзаголовок - используется в блоке "Не нашли"
-  period: Period #срок действия подборки, заполняется для товаров дня
-  background: Background #фон блока с подборкой  - используется в подборках и блоке "Не нашли"
-  productsCount: Int #количество элементов, выводимых в подборке на главной / количество видимых элементов в блоке с переключателями  
-  productCardOptions: ProductCardOptions #настройки карточки товара в подборке
- }
+#   caption: String #заголовок - используется в подборках и блоке "Не нашли"
+#   text: String #подзаголовок - используется в блоке "Не нашли"
+#   period: Period #срок действия подборки, заполняется для товаров дня
+#   background: Background #фон блока с подборкой  - используется в подборках и блоке "Не нашли"
+#   productsCount: Int #количество элементов, выводимых в подборке на главной / количество видимых элементов в блоке с переключателями  
+#   productCardOptions: ProductCardOptions #настройки карточки товара в подборке
+#  }
 
 
 
@@ -224,7 +224,6 @@ type ProductCardOptions   {
 
 type Background {  
   color: String
-  transparent: Int
   imageUrl: String
 }
 
@@ -365,10 +364,6 @@ type  PersonalBlockPromoWidget{
   showTimer: Boolean
 }
 
-#type WidgetButton {
-  #caption: String!
-  #link: AppLink!
-#}
 type PersonalBlockOrderWidget  {
   type: BlockType!
   id: String!  
@@ -383,30 +378,6 @@ type PersonalBlockOrderWidget  {
 }
 
 
-
-type PersonalBlockResponse {  
-  items: [PersonalBlockWidget]
-}
-
-type PersonalBlockBalanceResponse {  
-  items: [PersonalBlockBalanceWidget]
-}
-
-type PersonalBlockOrderResponse {  
-  items: [PersonalBlockOrderWidget]
-}
-
-type PersonalBlockPromoResponse {  
-  items: [PersonalBlockPromoWidget]
-}
-
-type notFound {
-  type: BlockType!
-  id: String
-  caption: String!
-  text: String  
-  buttons: [Button]
-}
 
 type NotFoundBlockOptions {
   caption: String
