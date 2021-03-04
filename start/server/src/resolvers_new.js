@@ -65,18 +65,18 @@ const resolvers = {
                 
         
         structure: () => ({
-            version: "1.0.0",
+            version: "1.1.0",
             content: struct
 
         }),
         structureAuth: () => ({
-            version: "1.0.0",
+            version: "1.1.0",
             options: {"background": {"color": "gradient"}},      
             content: structAuth //структура авторизованого. для неавторизованного использовать structNoAuth
 
         }),
         structureNoAuth: () => ({
-            version: "1.0.0",
+            version: "1.1.0",
             options: {"background": {"color": "gradient"}},
             content: structNoAuth //структура неавторизованого. для авторизованного использовать structAuth            
 
