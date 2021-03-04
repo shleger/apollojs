@@ -1,0 +1,75 @@
+{	
+  structureAuth {
+		version
+		content{
+			options{
+          ...optionsFragment 
+        }     
+				 	
+			
+			blocks {  
+				  ...blocksFragment
+			}
+		}
+	}
+}
+
+fragment optionsFragment on ContainerOptions {
+				caption
+				background{
+					color
+				}
+				blockOptions {
+					...blockOptionsFragment
+				}
+}
+
+fragment blocksFragment on Block {
+  	type
+		id
+  	options {
+      ...blockOptionsFragment
+    }
+}
+fragment blockOptionsFragment on BlockOptions {
+  				... on PersonalBlockOptions {
+						buttonStyle
+					}
+					... on PromoBlockOptions {
+						blockSize
+						buttons {
+							style
+							caption
+							link
+						}
+					}
+          ... on NotFoundBlockOptions {
+						caption
+  					text
+  					background {
+              color
+            }
+  					buttons{
+              style
+              caption
+              link
+            }
+					}
+  				... on ShelfBlockOptions {
+            caption
+  					productCardOptions {
+              cardBackground {
+								color
+							}
+							displayActionsLabel
+							displayDiscountLabel
+							displayOldPrice
+							displayCartButton
+							displayFavoriteIcon
+							displayCampareIcon
+							displayCreditInfo
+							displayProductStatus
+            	displayRating
+            }
+          }
+}

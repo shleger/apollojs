@@ -22,6 +22,6 @@ app.get("/", (req, res) => {
 })
 
 app.listen({ port: 8080 }, () =>
-  console.log(`🚀 Server ready at http://http://mapp-db-jerry:8080${server.graphqlPath}`)
+  console.log(`🚀 Server ready at http://mapp-db-jerry:8080${server.graphqlPath}`)
 );
 
