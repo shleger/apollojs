@@ -295,5 +295,28 @@
         }      
     }  
   ]
+  },
+  {
+    "containerId": "mMag_c1",
+    "containerType": "mMag",
+    "blocks":[
+      {
+        "type": "mMag",
+        "id": "mMag_b1",
+        
+        "options": {
+          "caption": "Все новости и обзоры",
+          "text": "Возможно вы найдете что-то среди наших новостей!",
+          "background": {
+            "color": "grey"
+          }, 
+          "buttons":[ {
+            "style":"primary",
+            "url":"http://mvideo.ru"
+            }
+          ]      
+        }      
+    }  
+  ]
   }
 ]

@@ -25,8 +25,9 @@ const resolvers = {
           if(obj.productCardOptions){
             return 'ShelfBlockOptions';
           }
-          if(obj.text){
-            return 'NotFoundBlockOptions';
+        //   console.log("ZZZ: " + JSON.stringify(obj.buttons))
+          if(obj.buttons && obj.buttons[0] && obj.buttons[0].url){
+              return 'MMagBlockOptions';
           }
           
           return 'NotFoundBlockOptions'; // GraphQLError is thrown

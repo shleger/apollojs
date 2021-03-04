@@ -29,7 +29,7 @@ type Query {
 
 }
 
-union BlockOptions = PersonalBlockOptions | PromoBlockOptions | ShelfBlockOptions | NotFoundBlockOptions
+union BlockOptions = PersonalBlockOptions | PromoBlockOptions | ShelfBlockOptions | NotFoundBlockOptions | MMagBlockOptions
 
 type MMagItem{
   type: BlockType!
@@ -172,9 +172,9 @@ type Background {
 type  Button{
   style: ButtonStyle
   caption: String
-  link: AppLink
-  visible: Boolean
-  enabled: Boolean
+  iconUrl: String
+  link: AppLink 
+  url: String
 }
 
 type PromoBlockResponse {  
@@ -242,6 +242,14 @@ type NotFoundBlockOptions {
   buttons: [Button]
 }
 
+type MMagBlockOptions {
+  caption: String
+  text: String
+  url: String
+  background: Background
+  buttons: [Button]
+}
+
 
 # type BlockOptions2 {
 #   buttonStyle: ButtonStyle #используется в персблоке для указание стиля кнопок в виджете убер-пикапа
@@ -299,6 +307,7 @@ enum BlockType {
   reviews #Новости и обзоры /ММаг
   alreadyViewed #Вы смотрели
   notFound #Не нашли
+  mMag #MMag block
 }
 
 enum BlockSize {
@@ -320,6 +329,7 @@ enum ContainerType {
   reviews #Новости и обзоры /ММаг
   alreadyViewed #Вы смотрели
   notFound #Не нашли
+  mMag #MMag container
 }
 
 `;
