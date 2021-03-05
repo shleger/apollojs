@@ -312,20 +312,9 @@
       {
         "type": "mMag",
         "id": "mMag_b1",
-        "options": {
-          "title": "Все новости и обзоры",
-          "description": "Возможно вы найдете что-то среди наших новостей!",
-          "background": {
-            "color": "grey"
-          }, 
-          "buttons":[ {
-            "style":"primary",
-            "title": "Все акции",            
-            "link": "promoList",
-            "url":"http://mvideo.ru"
-            }
-          ]      
-        }      
+        "targetURL":"http://mvideo.ru",
+        "mMagType":"mmag1",
+        "imageURL":"primary"          
     }  
   ]
   }

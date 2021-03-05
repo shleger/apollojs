@@ -15,11 +15,16 @@
 
 fragment optionsFragment on ContainerOptions {
   title
+  icon
+  button{
+    style
+    title
+    icon
+    link
+    url
+  }
   background {
     color
-  }
-  blockOptions {
-    ...blockOptionsFragment
   }
 }
 
@@ -32,9 +37,11 @@ fragment blocksFragment on Block {
 }
 fragment blockOptionsFragment on BlockOptions {
   ... on PersonalBlockOptions {
+    __typename
     buttonStyle
   }
   ... on PromoBlockOptions {
+    __typename
     blockSize
     buttons {
       style
@@ -42,19 +49,11 @@ fragment blockOptionsFragment on BlockOptions {
       link
     }
   }
-  ... on NotFoundBlockOptions {
+  ... on DefaultBlockOptions {
     title
-    description
-    background {
-      color
-    }
-    buttons {
-      style
-      title
-      link
-    }
   }
   ... on ShelfBlockOptions {
+    __typename
     title
     productCardOptions {
       cardBackground {
@@ -66,7 +65,6 @@ fragment blockOptionsFragment on BlockOptions {
       isCartButtonDisplayed
       isFavoriteIconDisplayed
       isCompareIconDisplayed
-      isCreditInfoDisplayed
       isProductStatusDisplayed
       isRatingDisplayed
     }

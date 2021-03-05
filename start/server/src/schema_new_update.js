@@ -9,43 +9,302 @@ schema {
 }
 
 type Query {
-  structure : MainPageStructure #+
-  structureAuth : MainPageStructure #+
-  structureNoAuth : MainPageStructure #+
-  
-  personalNoAuthItem (id: ID!): PersonalNoAuthItem #+
-  personalBalanceItem: PersonalBalanceItem #+
-  personalOrderItems: [PersonalOrderItem]#+
-  personalPromoItems: [PersonalPromoItem]#+
-  personalMapItem: PersonalMapItem#+
-  
+  structure : MainPageStructure
+  structureAuth : MainPageStructure
+  structureNoAuth : MainPageStructure
 
-  promoItems(id: ID!): [PromoItem] #+
-  shelfItems (id: ID!, type: String, itemsCount: Int, getAll:Boolean): [ShelfItem] #+
+  personalNoAuthItem (id: ID!): PersonalNoAuthItem
+  personalBalanceItem: PersonalBalanceItem
+  personalOrderItems: [PersonalOrderItem] 
+  personalPromoItems: [PersonalPromoItem]
+  personalMapItem: PersonalMapItem
 
-  notFoundItem: NotFoundItem #+
+  promoItems(id: ID!): [PromoItem]
 
-  mMagItems: [MMagItem] #+
+  shelfItems (id: ID!, type: String, itemsCount: Int, getAll:Boolean): [ShelfItem]
+
+  notFoundItem: NotFoundItem
+
+  mMagItems: [MMagItem]
+
 }
 
-#type Mutation {
-#TODO insert mutation queries
-#}
+union BlockOptions = PersonalBlockOptions | PromoBlockOptions | ShelfBlockOptions | DefaultBlockOptions
+#эти 2 типа не существуют тк заголовок и иконка в контейнере
+#| DefaultBlockOptions | MMagBlockOptions
+#от PersonalBlockOptions я бы тоже избавился - будем передавать стиль кнопки при запросе контента
 
+type MMagItem{
+  type: BlockType!
+  id: String!
+  title: String
+  targetURL: String
+  mMagType: String #текстовое обозначение типа статьи
+  imageURL: String
 
+}
 
-scalar Date
+type NotFoundItem {
+  #type: BlockType!
+  #id: String!
+  title: String
+  description: String
+  background: Background
+  buttons: [Button]
+}
 
-scalar DateTime
+type PersonalMapItem{
+  type: BlockType!
+  id: String!
+  title: String
+  #description: String
+  icon: String # либо идентификатор локального ресурса либо  URL
+  link: AppLink
+  shopIds: [Int]
+}
+
+type PersonalPromoItem{
+  type: BlockType!
+  id: String!
+  title: String
+  description: String
+  icon: String! # либо идентификатор локального ресурса либо  URL
+  link: AppLink!
+  campaignId: String
+  activePeriod: Period 
+  showTimer: Boolean
+}
+
+type PersonalOrderItem{
+  type: BlockType!
+  id: String!
+  title: String
+  description: String
+  icon: String# либо идентификатор локального ресурса либо  URL
+  link: AppLink
+  orderCount: Int!
+  orderId: String
+  endReserveDate: String
+  uberPickup: Boolean
+  button: Button
+}
+
+type PersonalBalanceItem {
+  type: BlockType!
+  id: String!
+  title: String
+  description: String
+  icon: String# либо идентификатор локального ресурса либо  URL
+  link: AppLink
+  balance: Int!
+}
+
+type PersonalNoAuthItem{
+  type: BlockType!
+  id: String!
+  title: String
+  icon: String# либо идентификатор локального ресурса либо  URL 
+  link: AppLink
+}
+
+type MainPageStructure {
+  version: String
+  options: MainPageOptions
+  content: [Container]
+}
+
+type MainPageOptions {
+  background: Background
+}
 
 type Container {
-  containerId: String!
+  containerId: ID!
   containerType: ContainerType!
   options: ContainerOptions
   blocks: [Block]
 }
 
+type ContainerOptions {
+  title: String
+  background: Background
+  icon: String
+  button: Button
+}
+
+type Block {
+  type: BlockType!  
+  id: ID!
+  options: BlockOptions
+}
+
+type PersonalBlockOptions {  
+  buttonStyle: ButtonStyle  
+}
+
+type PromoBlockOptions  {
+  blockSize: BlockSize 
+}
+
+scalar DateTime
+
+type Period {
+  startDateTime: DateTime
+  endDateTime: DateTime
+}
+
+type ProductCardOptions   {  
+  cardBackground: Background  
+  isActionsLabelDisplayed: Boolean!
+  isDiscountLabelDisplayed: Boolean!
+  isOldPriceDisplayed: Boolean!
+  isCartButtonDisplayed: Boolean!
+  isFavoriteIconDisplayed: Boolean!
+  isCompareIconDisplayed: Boolean!
+  isProductStatusDisplayed: Boolean!
+  isRatingDisplayed: Boolean!
+}
+
+type Background {  
+  color: String
+  imageUrl: String
+}
+
+type  Button{
+  style: ButtonStyle
+  title: String
+  icon: String
+  link: AppLink 
+  url: String
+}
+
+
+type PromoItem {
+  promoUuid: String!
+  promoId: String
+  title: String
+  imageURL: String  
+  activePeriod: Period    		
+  endless: Boolean
+  promoURL: String
+}
+
+type ShelfItem { 
+  shelfOptions: ShelfBlockOptions
+  totalProductCount: Int
+  products: [Product]
+}
+
+type ShelfBlockOptions {
+  title: String #заголовок подборки
+  button: Button #настройки кнопки "Смотреть все" - заполняются для подборки с переключателями либо "К товару" если в группе с переключателями в подборке 1 товар
+  period: Period #срок действия подборки, заполняется для товаров дня
+  background: Background #фон блока с подборкой
+  productsCount: Int #количество элементов, выводимых в подборке на главной / количество видимых элементов в блоке с переключателями  
+  productCardOptions: ProductCardOptions #настройки карточки товара в подборке
+}
+
+type Product {
+  info: ProductInfo
+  priceInfo: ProductPriceInfo
+  ratingInfo: ProductRatingInfo
+  stateInfo: ProductStateInfo
+}
+ 
+type ProductInfo {
+  id: ID #Идентификатор товара
+  name: String #Наименование товара
+  imageUrl: String #Ссылка на изображение товара
+  articleType: String #Дополнительное описание (заполняется для цифровых кодов и подарочных карт)         
+}
+ 
+type ProductPriceInfo {
+  actionPrice: Float #Актуальная цена товара (со скидкой)
+  basePrice: Float #Базовая цена товара (без скидки)
+  discountPercent: Int #Размер скидки (в процентах)
+}
+ 
+type ProductRatingInfo {
+  rating: Float #Оценка товара
+  reviewsCount: Int #Количество отзывов
+}
+type ProductStateInfo {
+  stateName: String
+  color: String
+}
+
+#этот тип не нужен - в данном блоке вообще никаких опций нет  -- спорно, я бы оствил как fallback
+type DefaultBlockOptions {
+  title: String
+}
+
+
+
+# type BlockOptions2 {
+#   buttonStyle: ButtonStyle #используется в персблоке для указание стиля кнопок в виджете убер-пикапа
+#   blockSize: BlockSize #используется в промоблоке для указание размера элемента в карусели 
+#   buttons: [Button] #описание кнопок в блоке - используется в промо-блоке и блоке "Не нашли"
+
+#   title: String #заголовок - используется в подборках и блоке "Не нашли"
+#   description: String #подзаголовок - используется в блоке "Не нашли"
+#   period: Period #срок действия подборки, заполняется для товаров дня
+#   background: Background #фон блока с подборкой  - используется в подборках и блоке "Не нашли"
+#   productsCount: Int #количество элементов, выводимых в подборке на главной / количество видимых элементов в блоке с переключателями  
+#   productCardOptions: ProductCardOptions #настройки карточки товара в подборке
+#  }
+
+enum ButtonStyle {
+  primary 
+  secondary
+  outline
+}
+
+enum AppLink {
+  auth   # экран авторизации
+  map   # карта с магазинами
+  profile  # профиль
+  orderDetail  # детали заказа
+  orderList  # список заказов
+  rateApp # экран оценки приложения
+  rateOrder # экран оценки заказа
+  rateProduct # экран оценки товара
+  productDetail # карточка товара
+  promoDetail # экран с деталями перс.предложения
+  loyalty # экран с условиями программы лояльности
+  balance #экран с бонусным балансом
+  promoList #экран Все акции
+}
+
+enum BlockType {
+  appHeader
+  signIn
+  noAuthBanner #персблок неавторизованного пользователя - баннер
+  noAuthMap #персблок неавторизованного пользователя - карта
+  authMap #персблок авторизованного пользователя - карта
+  personalTitle #приветствие в авторизованном блоке например "Константин, добрый день"
+  personalBalance #персблок авторизованного пользователя - виджет лояльности
+  personalOrder #персблок авторизованного пользователя - виджет с активным заказом
+  personalPromo #персблок авторизованного пользователя - виджет с перс.предложением
+  rateApp #персблок авторизованного пользователя - оценка приложения
+  promo #промо-блок(выгодные акции)
+  search #поиск
+  goodOfDay #Товары дня
+  shelf #Простая подборка - Хиты продаж, В тренде и тп
+  shelfGroup #Подборка с переключателями
+  banners #баннеры
+  reviews #Новости и обзоры /ММаг
+  alreadyViewed #Вы смотрели
+  notFound #Не нашли
+  mMag #MMag block
+}
+
+enum BlockSize {
+  compact
+  normal
+  large
+}
+
 enum ContainerType {
+  header #Заголовок приложения - навбар с логотипом и иконками + приветствие пользователя в персблоке
   personalAuth #персблок авторизованного пользователя
   personalNoAuth #персблок неавторизованного пользователя
   promo #промо-блок(выгодные акции)
@@ -57,314 +316,7 @@ enum ContainerType {
   reviews #Новости и обзоры /ММаг
   alreadyViewed #Вы смотрели
   notFound #Не нашли
-}
-
-type Block {
-  type: BlockType!  
-  #query: String! 
-  id: ID!
-  options: BlockOptions
-}
-
-
-
-#enum ScrollType {
-  #noScroll
-  #horizontal
-  #vertical
-#}
-
-enum BlockType {
-  appHeader
-  signIn
-  personalWidget #персблок неавторизованного пользователя - баннер
-  
-  personalNoAuthMap #персблок неавторизованного пользователя - карта
-  personalAuthMap #персблок авторизованного пользователя - карта  
-  
-  personalTitle #приветствие в авторизованном блоке например "Константин, добрый день"
-  personalBalance #персблок авторизованного пользователя - виджет лояльности
-  personalOrder #персблок авторизованного пользователя - виджет с активным заказом
-  personalPromo #персблок авторизованного пользователя - виджет с перс.предложением
-  rateApp #персблок авторизованного пользователя - оценка приложения
-
-
-  promo #промо-блок(выгодные акции)
-  search #поиск
-  goodOfDay #Товары дня
-  shelf #Простая подборка - Хиты продаж, В тренде и тп
-  shelfGroup #Подборка с переключателями
-  banners #баннеры
-  reviews #Новости и обзоры /ММаг
-  alreadyViewed #Вы смотрели
-  notFound #Не нашли
-}
-
-enum BlockSize {
-  compact
-  normal
-  large
-}
-
-
-#union BlockOptions = PersonalBlockOptions | PromoBlockOptions | ShelfBlockOptions | ProductCardOptions
-
-
-type PersonalBlockOptions  {  
-  buttonStyle: ButtonStyle  
-}
-
-type PromoBlockOptions  {
-  blockSize: BlockSize 
-  buttons: [Button]  
-}
-
-type ShelfOptions {
-  title: String #заголовок подборки
-  buttons: [Button] #настройки кнопки "Смотреть все" - заполняются для подборки с переключателями
-  period: Period #срок действия подборки, заполняется для товаров дня
-  background: Background #фон блока с подборкой
-  productsCount: Int #количество элементов, выводимых в подборке на главной / количество видимых элементов в блоке с переключателями  
-  productCardOptions: ProductCardOptions #настройки карточки товара в подборке
-}
-
-type ProductCardOptions {  
-  cardBackground: Background  
-  isActionsLabelDisplayed: Boolean!
-  isDiscountLabelDisplayed: Boolean!
-  isOldPriceDisplayed: Boolean!
-  isCartButtonDisplayed: Boolean!
-  isFavoriteIconDisplayed: Boolean!
-  isCompareIconDisplayed: Boolean! 
-  isProductStatusDisplayed: Boolean!
-  isRatingDisplayed: Boolean!
-
-  displayCreditInfo: Boolean! # forgot?
-}
-
-
-type ContainerOptions {
-  title: String
-  iconUrl: String
-  #scroll:ScrollType 
-  background: Background 
-  button: Button 
-}
-
-
-
-type Background {  
-  color: String
-  #transparent: Int
-  imageUrl: String
-}
-
-enum ButtonStyle {
-  primary
-  secondary
-  secondaryIcon
-  outline
-}
-
-
-type  Button{
-  style: ButtonStyle
-  title: String
-  iconUrl: String
-  link: AppLink 
-}
-
-
-
-#type PromoItems {  
-  #items:[PromoItem]
-#}
-
-type PromoItem {
-  promoUuid: String!
-  promoId: String
-  title: String
-  imageURL: String      		
-  dateStart: String
-  dateEnd: String
-  endless: Boolean
-  promoURL: String
-}
-
-
-type Shelf {  
-  shelfOptions: ShelfOptions
-  productCount: Int
-  products: [Product]
-}
-
-#type ShelfItems {
-  #items : [Shelf]
-#}
-
-type Product {
-  info: ProductInfo
-  priceInfo: ProductPriceInfo
-  ratingInfo: ProductRatingInfo
-  stateInfo: ProductStateInfo
-  #creditInfo: ProductCreditInfo
-  #bonusInfo: ProductBonusInfo    
-}
-
-type ProductStateInfo {
-  stateId: ProductStatus
-  stateName: String
-
-}
-
-type ProductInfo {
-  id: Int #Идентификатор товара
-  name: String #Наименование товара
-  imageUrl: String #Ссылка на изображение товара
-  articleType: ArticleType #Дополнительное описание (заполняется для цифровых кодов и подарочных карт)          
-}
-
-
-
-type ProductPriceInfo {
-  actionPrice: Float #Актуальная цена товара (со скидкой)
-  basePrice: Float #Старая(зачеркнутая) цена товара (без скидки)
-  discountPercent: Int #Размер скидки (в процентах)
-}
-
-type ProductRatingInfo {
-  rating: Float #Оценка товара
-  reviewsCount: Int #Количество отзывов
-}
-
-type ProductState {
-  statusName: String
-  color: String
-}
-
-
-type MainPageStructure {
-  version: String
-  content: [Container]
-  options : MainPageOptions
-}
-
-
-enum AppLink {
-  auth   # экран авторизации
-  map   # карта с магазинами
-  profile  # профиль
-  orderDetail  # детали заказа ?
-  orderList  # список заказов
-  rateApp # экран оценки приложения 
-  rateOrder # экран оценки заказа ?
-  rateProduct # экран оценки товара ?
-  productDetail # карточка товара ?
-  promoDetail # экран с деталями перс.предложения ?
-  loyalty # экран с условиями программы лояльности
-  balance #экран с бонусным балансом
-  promoList #экран Все акции
-  shelfDetail #экран с листингом подборки ?
-}
-
-
-
-
-enum LocalImage {
-  box #иконка с коробкой на неавторизованном баннере
-  cart #иконка с корзиной
-  favorite #иконка добавления в избранное на товаре
-  compare #иконка добавления к сравнению на товаре
-  user #иконка юзера на кнопке Войти и в авторизованном пользователе
-  
-  star # подложка для виджета с балансом со звездой
-  smile  #подложка для виджета с балансом со смайлом
-  like #подложка для виджета с балансом с пальцем
-  pen #подложка для виджета с балансом с ручкой
-  clock #подложка для виджета с балансом с часами
-  
-  logo #логотип в хедере
-  map #изображение для виджета с картой магазинов
-  message #для хедера иконка перехода в чат
-  geo #для хедера иконка перехода на карту
-  favoritePromo #иконка добавления в избранное на промо
-  favoriteClose #иконка закрытия на промо
-}
-
-
-type PersonalWidget  {
-  type: BlockType!
-  id: String!
-  title: String!
-  description: String
-  
-  icon: String# либо идентификатор локального ресурса либо  URL
-  
-  link: AppLink
-}
-
-type PersonalBalance  {
-  type: BlockType!  
-  id: String!
-  title: String!
-  description: String
-  icon: String #icon -то, что выглядит как иконка
-  link: AppLink!
-  balance: Int!
-}
-
-type personalPromo  {
-  type: BlockType!  
-  id: String
-  title: String!
-  description: String
-  imageUrl: String
-  localImage: LocalImage
-  link: AppLink!
-  campaignId: String
-  beginDate: String
-  endDate: String
-  showTimer: Boolean
-}
-
-#type WidgetButton {
-  #title: String!
-  #link: AppLink!
-#}
-type PersonalOrder {
-  type: WidgetType!
-  id: String!  
-  title: String!
-  description: String
-  imageUrl: String
-  localImage: LocalImage
-  orderCount: Int!
-  orderId: String
-  endReserveDate: String
-  uberPickup: Boolean   
-  button: Button
-}
-
-
-
-
-
-type NotFoundItem {
-  title: String
-  description: String
-  background: Background
-  buttons: [Button]
-}
-
-
-
-type MMagItem {
-  title: "Умная одежда: новый тренд",
-  targetURL: "/obzor-umnoj-odezhdy-chto-kupit",
-  type: "100005",   
-  imageURL
-  
-
+  mMag #MMag container
 }
 
 `;

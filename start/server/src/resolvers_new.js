@@ -24,13 +24,8 @@ const resolvers = {
           }
           if(obj.productCardOptions){
             return 'ShelfBlockOptions';
-          }
-        //   console.log("ZZZ: " + JSON.stringify(obj.buttons))
-          if(obj.buttons && obj.buttons[0] && obj.buttons[0].url){
-              return 'MMagBlockOptions';
-          }
-          
-          return 'NotFoundBlockOptions'; // GraphQLError is thrown
+          }          
+          return 'DefaultBlockOptions'; // GraphQLError is thrown
         },
     },
     Query: {

@@ -29,14 +29,14 @@ type Query {
 
 }
 
-union BlockOptions = PersonalBlockOptions | PromoBlockOptions | ShelfBlockOptions | NotFoundBlockOptions | MMagBlockOptions
+union BlockOptions = PersonalBlockOptions | PromoBlockOptions | ShelfBlockOptions | DefaultBlockOptions
 
 type MMagItem{
   type: BlockType!
   id: String!
   title: String
   targetURL: String
-  mMagType: Int
+  mMagType: String #текстовое обозначение типа статьи
   imageURL: String
 
 }
@@ -53,8 +53,7 @@ type NotFoundItem {
 type PersonalMapItem{
   type: BlockType!
   id: String!
-  title: String!
-  #description: String
+  title: String
   icon: String # либо идентификатор локального ресурса либо  URL
   link: AppLink
   shopIds: [Int]
@@ -63,20 +62,19 @@ type PersonalMapItem{
 type PersonalPromoItem{
   type: BlockType!
   id: String!
-  title: String!
+  title: String
   description: String
   icon: String! # либо идентификатор локального ресурса либо  URL
   link: AppLink!
   campaignId: String
-  beginDate: String
-  endDate: String
+  activePeriod: Period 
   showTimer: Boolean
 }
 
 type PersonalOrderItem{
   type: BlockType!
   id: String!
-  title: String!
+  title: String
   description: String
   icon: String# либо идентификатор локального ресурса либо  URL
   link: AppLink
@@ -90,7 +88,7 @@ type PersonalOrderItem{
 type PersonalBalanceItem {
   type: BlockType!
   id: String!
-  title: String!
+  title: String
   description: String
   icon: String# либо идентификатор локального ресурса либо  URL
   link: AppLink
@@ -100,9 +98,9 @@ type PersonalBalanceItem {
 type PersonalNoAuthItem{
   type: BlockType!
   id: String!
-  title: String!
+  title: String
   description: String
-  icon: String# либо идентификатор локального ресурса либо  URL
+  icon: String # либо идентификатор локального ресурса либо  URL
   link: AppLink
 }
 
@@ -126,7 +124,8 @@ type Container {
 type ContainerOptions {
   title: String
   background: Background
-  blockOptions: BlockOptions
+  icon: String
+  button: Button
 }
 
 type Block {
@@ -159,7 +158,6 @@ type ProductCardOptions   {
   isCartButtonDisplayed: Boolean!
   isFavoriteIconDisplayed: Boolean!
   isCompareIconDisplayed: Boolean!
-  isCreditInfoDisplayed: Boolean!
   isProductStatusDisplayed: Boolean!
   isRatingDisplayed: Boolean!
 }
@@ -172,27 +170,26 @@ type Background {
 type  Button{
   style: ButtonStyle
   title: String
-  iconUrl: String
+  icon: String
   link: AppLink 
   url: String
 }
 
-type PromoBlockResponse {  
-  items:[PromoItem]
-}
-
 type PromoItem {
+  type: BlockType!
+  id: String!
   promoUuid: String!
   promoId: String
   title: String
-  imageURL: String      		
-  dateStart: String
-  dateEnd: String
+  imageURL: String  
+  activePeriod: Period    		
   endless: Boolean
   promoURL: String
 }
 
 type ShelfItem { 
+  type: BlockType!
+  id: String!
   shelfOptions: ShelfBlockOptions
   totalProductCount: Int
   products: [Product]
@@ -200,7 +197,7 @@ type ShelfItem {
 
 type ShelfBlockOptions {
   title: String #заголовок подборки
-  buttons: [Button] #настройки кнопки "Смотреть все" - заполняются для подборки с переключателями
+  button: Button #настройки кнопки "Смотреть все" - заполняются для подборки с переключателями либо "К товару" если в группе с переключателями в подборке 1 товар
   period: Period #срок действия подборки, заполняется для товаров дня
   background: Background #фон блока с подборкой
   productsCount: Int #количество элементов, выводимых в подборке на главной / количество видимых элементов в блоке с переключателями  
@@ -235,19 +232,8 @@ type ProductStateInfo {
   stateName: String
   color: String
 }
-type NotFoundBlockOptions {
+type DefaultBlockOptions {
   title: String
-  description: String
-  background: Background
-  buttons: [Button]
-}
-
-type MMagBlockOptions {
-  title: String
-  description: String
-  url: String
-  background: Background
-  buttons: [Button]
 }
 
 
