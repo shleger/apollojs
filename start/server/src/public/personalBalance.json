@@ -4,7 +4,7 @@
             "id": "balanceVariant1",
             "title": "1998 Бонусных рублей",                   
             "description": "Успейте потратить 100 Бонусных рублей до 31.01.2021",
-            "imageUrl": "clock.png",
+            "icon": "clock",
             "link": "profile",
             "balance": 1998
         },
@@ -13,7 +13,7 @@
             "id": "balanceVariant2",
             "title": "Нет Бонусных рублей",                   
             "description": "Скоро будут доступны 100 Бонусных рублей",
-            "imageUrl": "star.png",
+            "icon": "star",
             "link": "balance",
             "balance": 0
         },
@@ -22,7 +22,7 @@
             "id": "balanceVariant3",
             "title": "1998 Бонусных рублей",                   
             "description": "Дозаполните профиль, чтобы получать больше Бонусных рублей и персональные предложения",
-            "imageUrl": "pen.png",
+            "icon": "pen",
             "link": "profile",
             "balance": 1998
         },
@@ -31,7 +31,7 @@
             "id": "balanceVariant4",
             "title": "1998 Бонусных рублей",                   
             "description": "Не забудьте использовать Бонусные рубли при оплате следующей покупки!",
-            "imageUrl": "smile.png",
+            "icon": "smile",
             "link": "balance",
             "balance": 1998
         },
@@ -40,7 +40,7 @@
             "id": "balanceVariant5",
             "title": "Нет Бонусных рублей",                   
             "description": "Покупайте товары в М.Видео, получайте Бонусные рубли и оплачивайте ими до 50% стоимости покупки!",
-            "imageUrl": "like.png",
+            "icon": "like",
             "link": "loyalty",
             "balance": 0
         }

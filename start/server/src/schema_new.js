@@ -25,20 +25,19 @@ type Query {
 
   notFoundItem: NotFoundItem
 
-  mMagItems: [MMagItem]
+  mMagItems(id: ID!): [MMagItem]
 
 }
 
 union BlockOptions = PersonalBlockOptions | PromoBlockOptions | ShelfBlockOptions | DefaultBlockOptions
 
-type MMagItem{
+type MMagItem {
   type: BlockType!
   id: String!
   title: String
   targetURL: String
   mMagType: String #текстовое обозначение типа статьи
   imageURL: String
-
 }
 
 type NotFoundItem {
@@ -56,7 +55,7 @@ type PersonalMapItem{
   title: String
   icon: String # либо идентификатор локального ресурса либо  URL
   link: AppLink
-  shopIds: [Int]
+  shopIds: [String]
 }
 
 type PersonalPromoItem{
@@ -76,8 +75,8 @@ type PersonalOrderItem{
   id: String!
   title: String
   description: String
-  icon: String# либо идентификатор локального ресурса либо  URL
-  link: AppLink
+  icon: String# либо идентификатор локального ресурса либо  URL 
+  link: AppLink #link внутри кнопки button, а у самого виджета нет
   orderCount: Int!
   orderId: String
   endReserveDate: String
@@ -140,7 +139,7 @@ type PersonalBlockOptions {
 
 type PromoBlockOptions  {
   blockSize: BlockSize 
-  buttons: [Button]  
+  #buttons: [Button]  кнопка Все акции перенесена в контейнер
 }
 
 scalar DateTime
@@ -164,14 +163,14 @@ type ProductCardOptions   {
 
 type Background {  
   color: String
-  imageUrl: String
+  imageURL: String
 }
 
 type  Button{
   style: ButtonStyle
   title: String
   icon: String
-  link: AppLink 
+  link: AppLink #может объединить link и url как это сделали с imageUrl и LocalImage? Будет link: String - парситься либо в URL либо в AppLInk
   url: String
 }
 
@@ -214,7 +213,7 @@ type Product {
 type ProductInfo {
   id: ID #Идентификатор товара
   name: String #Наименование товара
-  imageUrl: String #Ссылка на изображение товара
+  imageURL: String #Ссылка на изображение товара
   articleType: String #Дополнительное описание (заполняется для цифровых кодов и подарочных карт)         
 }
  
@@ -253,7 +252,7 @@ type DefaultBlockOptions {
 enum ButtonStyle {
   primary
   secondary
-  secondaryIcon
+  #secondaryIcon
   outline
 }
 
@@ -271,6 +270,7 @@ enum AppLink {
   loyalty # экран с условиями программы лояльности
   balance #экран с бонусным балансом
   promoList #экран Все акции
+  shelfDetail #экран с листингом подборки
 }
 
 enum BlockType {

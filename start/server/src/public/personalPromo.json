@@ -1,14 +1,18 @@
 [
     {
         "type": "personalPromo",
+        "id": "C-00242835",
         "title": "Персональное предложение",
         "description": "Кэшбэк 20 %",
-        "imageUrl": "https://static.mvideo.ru/icerock/target_campaign/PP_mobbap_1602_2.png",
+        "icon": "https://static.mvideo.ru/icerock/target_campaign/PP_mobbap_1602_2.png",
         "link": "promoDetail",
         "campaignId": "C-00242835",
-        "beginDate": "2021-02-16",
-        "endDate": "2021-03-03",
-        "showTimer": true
+        "showTimer": true,
+        "activePeriod": {
+            "startDateTime": "2021-02-16T00:00:00",
+            "endDateTime": "2021-03-31T23:59:59"
+          }      
+        
     }
 
 ]

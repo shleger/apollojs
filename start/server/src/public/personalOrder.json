@@ -2,12 +2,12 @@
 	"personalOrder0": [
 		{
 			"type": "personalOrder",
+			"id": "хххxxxxxxxx",
 			"title": "Готов к выдаче",
-			"description": "Самовывоз до 28 февраля",
-			"imageUrl": "ok.png",                  
+			"description": "Самовывоз до 28 февраля",			
 			"orderCount": 1,
 			"orderId": "хххxxxxxxxx",
-			"endReserveDate": "2021-02-28T23:59:59",
+			"endReserveDate": "2021-03-28T23:59:59",
 			"uberPickup": false,
 			"button": {
 				"title": "К заказу", 
@@ -17,13 +17,13 @@
 	],
 	"personalOrder1": [
 		{
-                "type": "personalOrder",               
+				"type": "personalOrder",
+				"id": "хххxxxxxxxx",               
                 "title": "Готов к выдаче",
-                "description": "Самовывоз до 28 февраля",
-                "imageUrl": "ok.png",                  
+                "description": "Самовывоз до 28 февраля",                
                 "orderCount": 1,
                 "orderId": "хххxxxxxxxx",
-                "endReserveDate": "2021-02-28T23:59:59",
+                "endReserveDate": "2021-03-28T23:59:59",
                 "uberPickup": true,
                 "button": {
                     "title": "Забрать заказ",
@@ -33,13 +33,14 @@
 	],
 	"personalOrder2": [
 		{
-                "type": "personalOrder",               
+				"type": "personalOrder",               
+				"id": "хххxxxxxxxx1",
                 "title": "Готов к выдаче",
                 "description": "Самовывоз до 28 февраля",
                 "imageUrl": "ok.png",                  
                 "orderCount": 1,
-                "orderId": "хххxxxxxxxx",
-                "endReserveDate": "2021-02-28T23:59:59",
+                "orderId": "хххxxxxxxxx1",
+                "endReserveDate": "2021-03-28T23:59:59",
                 "uberPickup": true,
                 "button": {
                     "title": "Забрать заказ",
@@ -48,12 +49,13 @@
         },
         {
 			"type": "personalOrder",
+			"id": "хххxxxxxxxx2",
 			"title": "Готов к выдаче",
 			"description": "Самовывоз до 28 февраля",
 			"imageUrl": "ok.png",                  
 			"orderCount": 1,
-			"orderId": "хххxxxxxxxx",
-			"endReserveDate": "2021-02-28T23:59:59",
+			"orderId": "хххxxxxxxxx2",
+			"endReserveDate": "2021-03-28T23:59:59",
 			"uberPickup": false,
 			"button": {
 				"title": "К заказу", 
@@ -63,7 +65,8 @@
 	],
 	"personalOrder3": [
 		{
-			"type": "personalOrder",               
+			"type": "personalOrder",
+			"id": "personalOrder",               
 			"title": "Готовы к выдаче",
 			"description": "Заказов к выдаче: 3 \nПроверьте адреса магазинов для получения",
 			"imageUrl": "ok.png",                  

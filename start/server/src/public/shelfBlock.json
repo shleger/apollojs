@@ -1,13 +1,14 @@
 [
-    {
-        
+    {        
+        "type": "shelf",
+        "id": "Хиты продаж",        
         "totalProductCount": 2,
         "products": [
             {
                 "info": {
                     "id": "30046138",
                     "name": "Смартфон Xiaomi Redmi Note 8 Pro 6+128GB Mineral Grey",
-                    "imageUrl": "https://img.mvideo.ru/Pdb/30046138.jpg"                
+                    "imageURL": "https://img.mvideo.ru/Pdb/30046138.jpg"                
                 },
                 "priceInfo": {
                     "basePrice": 21990,
@@ -23,7 +24,7 @@
                 "info": {
                     "id": "30046138",
                     "name": "Смартфон Xiaomi Redmi Note 8 Pro 6+128GB Mineral Grey",
-                    "imageUrl": "https://img.mvideo.ru/Pdb/30046138.jpg"
+                    "imageURL": "https://img.mvideo.ru/Pdb/30046138.jpg"
                 },
                 "priceInfo": {
                     "basePrice": 21990                
@@ -34,9 +35,9 @@
                 },
                 "stateInfo": {
                     "stateName": "Предзаказ с 8 марта",
-                    "stateId": "green"                
+                    "color": "green"                
                 }    
             }
         ]
     }
-    ]
+]

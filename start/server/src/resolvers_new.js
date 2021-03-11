@@ -10,8 +10,11 @@ let promoBlockItems = require('./public/promoBlockItems.json');
 
 let shelfBlock = require('./public/shelfBlock.json');
 let shelfGroup = require('./public/shelfGroup.json');
+let goodOfDay = require('./public/goodOfDay.json');
 
 let persPromo = require('./public/personalPromo.json');
+
+let mMagItems = require('./public/mMagItems.json');
 
 const resolvers = {
     BlockOptions: {
@@ -29,24 +32,13 @@ const resolvers = {
         },
     },
     Query: {
-        personalPromoItems: () => ({
-            items: persPromo
-        }),
-        personalMapItem: () => ({
-            "type": "authMap",
-            "id": "AuthMap",
-            "title": "Магазины М.Видео",
-            "imageUrl": "map.png",
-            "link": "map"     
-        }),
-        mMagItems: () => (
-             [{
-                "title": "Умная одежда: новый тренд",
-                "targetURL": "/obzor-umnoj-odezhdy-chto-kupit",
-                "mMagType": "100005",   
-                "imageURL": "http://mvideo.ru"
-            }]
-         ),
+        
+        promoItems (parent, args, context, info)  {
+            return promoBlockItems
+        },
+        mMagItems (parent, args, context, info)  {
+            return mMagItems
+        },
         // getPersonalBanners: () => ({
         //     items: persBanners
 
@@ -57,8 +49,29 @@ const resolvers = {
             //return {items: persBanners}
 
         },        
+        personalBalanceItem(parent, args, context, info)  {
+            return persBalance[0] //индекс можно менять от 0 до 4          
 
-                
+        },
+        personalOrderItems(parent, args, context, info)  {
+            return persOrder.personalOrder2 //индекс можно менять от 0 до 3          
+        },
+        personalPromoItems(parent, args, context, info)  {
+            return persPromo
+        },
+        personalMapItem: () => ({
+            "type": "authMap",
+            "id": "authMap",
+            "title": "Магазины М.Видео",
+            "icon": "map",
+            "link": "map",
+            "shopIds": [
+                "S018",
+                "S019",
+                "S412",
+                "S014"
+            ]     
+        }),        
         
         structure: () => ({
             version: "1.1.0",
@@ -76,15 +89,18 @@ const resolvers = {
             options: {"background": {"color": "gradient"}},
             content: structNoAuth //структура неавторизованого. для авторизованного использовать structAuth            
 
-        }),
-        
-        
+        }),        
         shelfItems (parent, args, context, info) {            
-            //return {items: shelfBlock}
-            return {items: shelfGroup}
-        } 
-
-        
+            if (args.type == "shelf") {
+                return shelfBlock
+            }
+            if (args.type == "shelfGroup") {
+                return shelfGroup
+            }
+            if (args.type == "goodOfDay") {
+                return goodOfDay
+            }           
+        }  
         
     }
 };

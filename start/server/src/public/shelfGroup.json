@@ -1,13 +1,13 @@
 [
     {    
+        "type": "shelf",
+        "id": "Хиты продаж",
         "shelfOptions": {
             "title": "Хиты продаж",
-            "buttons": [
-                {                 
+            "button": {                 
                   "title": "Смотреть все",        
                   "link": "shelfDetail"
-                }
-            ]            
+            }            
         },
         "totalProductCount": 2,
         "products": [
@@ -54,14 +54,14 @@
         ]
     },
     {
+        "type": "shelf",
+        "id": "В тренде",
         "shelfOptions": {
             "title": "В тренде",
-            "buttons": [
-                {                  
+            "button": {                  
                   "title": "К товару",        
                   "link": "productDetail"
-                }
-            ]            
+            }            
         },
         "totalProductCount": 1,
         "products": [

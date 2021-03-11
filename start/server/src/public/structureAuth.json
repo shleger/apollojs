@@ -71,25 +71,21 @@
     ]
   },
   {
-    "containerId": "promo_1",
+    "containerId": "promo_c1",
     "containerType": "promo",
     "options": {
-      "scroll": "horizontal"
+      "button": {
+        "style": "secondary",
+        "title": "Все акции",        
+        "link": "promoList"
+      }    
     },    
     "blocks": [
       {
-        "type": "promo",
-        "query": "promoBlock",
-        "id": "promo1",
+        "type": "promo",       
+        "id": "promo_b1",
         "options": {
-          "blockSize": "normal",
-          "buttons": [
-              {
-                "style": "secondary",
-                "title": "Все акции",        
-                "link": "promoList"
-              }
-          ]      
+          "blockSize": "compact"       
         }
       }
     ]
@@ -188,9 +184,8 @@
     },
     "blocks": [
       {
-        "type": "shelfGroup",
-        "query": "shelf",
-        "id": "shelfGroup1",
+        "type": "shelfGroup",        
+        "id": "shelfGroup_b1",
         "options": {        
           "background": {
             "color": "white"
@@ -215,26 +210,47 @@
     ]
   },
   {
-    "containerId": "reviews_1",
-    "containerType": "reviews",
+    "containerId": "mMag_c1",
+    "containerType": "mMag",
     "options": {
       "title": "Mag",
-      "localImage": "smallLogo",
-      "scroll": "horizontal"
+      "icon": "https://static.mvideo.ru/media/Static_Pages/mmag/images/ico-mag_1ico-mag.png",
+      "background": {
+        "color": "white"
+      },
+      "button": {
+        "style":"secondary",
+        "title": "Все новости и обзоры",            
+        "url": "https://www.mvideo.ru/obzory"
+      }        
     },
-    "blocks": [
+    "blocks":[
       {
-        "type": "reviews",
-        "query": "reviews",
-        "id": "reviews1",
-        "options": {
-          "button": {
-            "buttonStyle": "secondary",
-            "title": "Все новости и обзоры",
-            "link": "reviewList"            
-          }
-        }
-      }
+        "type": "mMag",
+        "id": "mMag_b1"        
+      }  
+    ]
+  },
+    {
+    "containerId": "mMag_c2",
+    "containerType": "mMag",
+    "options": {
+      "title": "Mag",
+      "icon": "https://static.mvideo.ru/media/Static_Pages/mmag/images/ico-mag_1ico-mag.png",
+      "background": {
+        "color": "white"
+      },
+      "button": {
+        "style":"secondary",
+        "title": "Все обзоры",            
+        "url": "https://www.mvideo.ru/obzory"
+      }        
+    },
+    "blocks":[
+      {
+        "type": "mMag",
+        "id": "mMag_b2"        
+      }  
     ]
   },
   {
@@ -295,18 +311,5 @@
         }      
     }  
   ]
-  },
-  {
-    "containerId": "mMag_c1",
-    "containerType": "mMag",
-    "blocks":[
-      {
-        "type": "mMag",
-        "id": "mMag_b1",
-        "targetURL":"http://mvideo.ru",
-        "mMagType":"mmag1",
-        "imageURL":"primary"          
-    }  
-  ]
-  }
+  }  
 ]

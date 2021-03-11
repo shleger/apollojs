@@ -1,0 +1,34 @@
+[
+    {
+        "type": "mMag",
+        "id": "obzor-video-sony-xperia-z4-tablet",
+        "title": "Xperia Z4 Tablet",
+        "targetURL": "https://www.mvideo.ru/obzor-video-sony-xperia-z4-tablet",
+        "mMagType": "Видеообзор",
+        "imageURL": "https://static.mvideo.ru/media/Obzory/2015/September/obzor-sony/300х150_Sony-Tablet-4-play.jpg"
+    },
+    {
+        "type": "mMag",
+        "id": "obzor-tehniki-dlya-zozh-i-poleznogo-pitaniya",
+        "title": "Не смузи единым",
+        "targetURL": "https://www.mvideo.ru/obzor-tehniki-dlya-zozh-i-poleznogo-pitaniya",
+        "mMagType": "Подборка",
+        "imageURL": "https://static.mvideo.ru/media/Promotions/Promo_Page/2019/March/obzor-tehniki-dlya-zozh-i-poleznogo-pitaniya/hub_300x150.jpg"
+    },
+    {
+        "type": "mMag",
+        "id": "obzor-kak-vybrat-posudomoechnuyu-mashinu",
+        "title": "Как выбрать посудомойку",
+        "targetURL": "https://www.mvideo.ru/obzor-kak-vybrat-posudomoechnuyu-mashinu",
+        "mMagType": "Гид по выбору",
+        "imageURL": "https://static.mvideo.ru/media/Promotions/Promo_Page/2018/August/obzor-kak-vybrat-posudomoechnuyu-mashinu/hub_300x150.png"
+    },
+    {
+        "type": "mMag",
+        "id": "obzor-kak-vybrat-stiralnuyu-mashinu",
+        "title": "Как выбрать стиральную машину",
+        "targetURL": "https://www.mvideo.ru/obzor-kak-vybrat-stiralnuyu-mashinu",
+        "mMagType": "Гид по выбору",
+        "imageURL": "https://static.mvideo.ru/media/Promotions/Promo_Page/2019/April/obzor-kak-vybrat-stiralnuyu-mashinu/hub_300x150.png"
+    }
+]
